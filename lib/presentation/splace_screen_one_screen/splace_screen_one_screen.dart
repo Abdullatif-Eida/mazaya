@@ -9,15 +9,19 @@ class SplaceScreenOneScreen extends GetWidget<SplaceScreenOneController> {
       child: Scaffold(
         backgroundColor: ColorConstant.whiteA700,
         body: Container(
-          width: double.maxFinite,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              //CustomImageView(svgPath: ImageConstant.logo, height: getSize(80), width: getSize(80)),
-              Image.asset(ImageConstant.logo, height: getSize(80), width: getSize(80)),
-              Padding(
-                  padding: getPadding(top: 8),
-                  child: Text("Mazaya".tr, overflow: TextOverflow.ellipsis, textAlign: TextAlign.center, style: AppStyle.txtBerkshireSwashRegular37)),
+              CustomImageView(
+                imagePath: ImageConstant.splashBanner,
+                fit: BoxFit.fill,
+                width: double.infinity,
+              ),
+              SizedBox(height: 15),
+              CustomImageView(
+                imagePath: ImageConstant.logo,
+                height: getSize(180),
+              ),
             ],
           ),
         ),

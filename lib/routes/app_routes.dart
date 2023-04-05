@@ -1,3 +1,5 @@
+import 'package:shoes_app/presentation/doctor_detail_screen/controller/doctor_detail_controller.dart';
+import 'package:shoes_app/presentation/doctor_detail_screen/doctor_detail_screen.dart';
 import 'package:shoes_app/presentation/notification_page/notification_page.dart';
 import 'package:shoes_app/presentation/splace_screen_one_screen/splace_screen_one_screen.dart';
 import 'package:shoes_app/presentation/splace_screen_one_screen/binding/splace_screen_one_binding.dart';
@@ -61,6 +63,8 @@ import 'package:shoes_app/presentation/app_navigation_screen/app_navigation_scre
 import 'package:shoes_app/presentation/app_navigation_screen/binding/app_navigation_binding.dart';
 import 'package:get/get.dart';
 
+import '../presentation/doctor_detail_screen/binding/doctor_detail_binding.dart';
+
 class AppRoutes {
   static const String splaceScreenOneScreen = '/splace_screen_one_screen';
 
@@ -90,14 +94,15 @@ class AppRoutes {
 
   static const String homeScreenPage = '/home_screen_page';
 
-  static const String homeScreenContainerScreen =
-      '/home_screen_container_screen';
+  static const String homeScreenContainerScreen = '/home_screen_container_screen';
 
   static const String searchScreen = '/search_screen';
 
   static const String bestSellingProductScreen = '/best_selling_product_screen';
 
   static const String productDetailScreen = '/product_detail_screen';
+
+  static const String doctorDetailScreen = '/doctor_detail_screen';
 
   static const String cartScreen = '/cart_screen';
 
@@ -181,6 +186,13 @@ class AppRoutes {
       page: () => LoginScreen(),
       bindings: [
         LoginBinding(),
+      ],
+    ),
+    GetPage(
+      name: doctorDetailScreen,
+      page: () => DoctorDetailsScreen(),
+      bindings: [
+        DoctorDetailBinding(),
       ],
     ),
     GetPage(

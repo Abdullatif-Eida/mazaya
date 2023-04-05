@@ -40,22 +40,32 @@ class MyProfilePage extends StatelessWidget {
               Container(
                   width: double.maxFinite,
                   child: Container(
-                      padding: getPadding(left: 133, top: 16, right: 133, bottom: 16),
+                      padding: getPadding(top: 16, bottom: 16, left: 16, right: 16),
                       decoration: AppDecoration.white,
-                      child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-                        CustomImageView(
-                            imagePath: ImageConstant.imgEllipse150,
-                            height: getSize(80),
-                            width: getSize(80),
-                            radius: BorderRadius.circular(getHorizontalSize(40))),
+                      child: Column(mainAxisAlignment: MainAxisAlignment.start, crossAxisAlignment: CrossAxisAlignment.center, children: [
+                        Center(
+                          child: CustomImageView(
+                              imagePath: ImageConstant.imgEllipse150,
+                              height: getSize(80),
+                              width: getSize(80),
+                              radius: BorderRadius.circular(getHorizontalSize(40))),
+                        ),
                         Padding(
                             padding: getPadding(top: 8),
-                            child: Text("أحمد أحمد جاسم".tr,
+                            child: Text("الأسم: أحمد أحمد جاسم".tr,
                                 overflow: TextOverflow.ellipsis, textAlign: TextAlign.left, style: AppStyle.txtBodyBlack900)),
                         Padding(
                             padding: getPadding(top: 6),
-                            child: Text("ahmedahmed@gmail.com".tr,
-                                overflow: TextOverflow.ellipsis, textAlign: TextAlign.left, style: AppStyle.txtSFUITextRegular15Gray600))
+                            child: Text("البريد الإلكتروني: ahmedahmed@gmail.com".tr,
+                                overflow: TextOverflow.ellipsis, textAlign: TextAlign.left, style: AppStyle.txtSFUITextRegular15Gray600)),
+                        Padding(
+                            padding: getPadding(top: 6),
+                            child: Text("الدولة: السعودية".tr,
+                                overflow: TextOverflow.ellipsis, textAlign: TextAlign.left, style: AppStyle.txtSFUITextRegular15Gray600)),
+                        Padding(
+                            padding: getPadding(top: 6),
+                            child: Text("العضوية: عضو مبدع".tr,
+                                overflow: TextOverflow.ellipsis, textAlign: TextAlign.left, style: AppStyle.txtSFUITextRegular15Gray600)),
                       ]))),
               Container(
                   width: double.maxFinite,
@@ -120,7 +130,7 @@ class MyProfilePage extends StatelessWidget {
                       CustomImageView(svgPath: ImageConstant.imgArrowleft, height: getSize(24), width: getSize(24))
                     ])),
               ),
-              for (var item in ["مزدي خدمة مزايا ", "أحدث العروض", "بطاقات المزيا", "أسئلة شائعة", "انضم الى شبكتنا", "تواصل معنا"])
+              for (var item in ["مزودي خدمة مزايا ", "أحدث العروض ", "بطاقات المزيا ", "أسئلة شائعة ", "انضم الى شبكتنا ", "تواصل معنا "])
                 GestureDetector(
                   onTap: () {},
                   child: Container(
@@ -129,7 +139,7 @@ class MyProfilePage extends StatelessWidget {
                       padding: getPadding(left: 20, top: 16, right: 20, bottom: 16),
                       decoration: AppDecoration.white,
                       child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                        CustomImageView(imagePath: ImageConstant.logo, height: getSize(24), width: getSize(24)),
+                        Icon(Icons.list),
                         Padding(
                             padding: getPadding(left: 15, top: 3, bottom: 2),
                             child: Text(item.tr,
@@ -138,6 +148,26 @@ class MyProfilePage extends StatelessWidget {
                         CustomImageView(svgPath: ImageConstant.imgArrowleft, height: getSize(24), width: getSize(24))
                       ])),
                 ),
+              GestureDetector(
+                onTap: () {
+                  PrefUtils.setLogin(false);
+                  Navigator.of(context).pushNamedAndRemoveUntil(AppRoutes.loginScreen, (Route<dynamic> route) => false);
+                },
+                child: Container(
+                    width: double.maxFinite,
+                    margin: getMargin(top: 1),
+                    padding: getPadding(left: 20, top: 16, right: 20, bottom: 16),
+                    decoration: AppDecoration.white,
+                    child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                      Icon(Icons.list),
+                      Padding(
+                          padding: getPadding(left: 15, top: 3, bottom: 2),
+                          child: Text("تسجيل الخروج ".tr,
+                              overflow: TextOverflow.ellipsis, textAlign: TextAlign.left, style: AppStyle.txtSFUITextRegular15Black900)),
+                      Spacer(),
+                      Icon(Icons.logout, color: Colors.red),
+                    ])),
+              ),
               Container(
                   width: double.maxFinite,
                   margin: getMargin(top: 16),

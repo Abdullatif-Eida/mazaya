@@ -47,9 +47,6 @@ class LoginScreen extends GetWidget<LoginController> {
                     height: getSize(
                       80,
                     ),
-                    width: getSize(
-                      80,
-                    ),
                   ),
                   Padding(
                     padding: getPadding(

@@ -6,8 +6,6 @@ import 'package:shoes_app/presentation/home_screen_container_screen/controller/h
 class CustomBottomBar extends StatelessWidget {
   CustomBottomBar({this.onChanged});
 
-
-
   List<BottomMenuModel> bottomMenuList = [
     BottomMenuModel(
       icon: ImageConstant.imgFolder,
@@ -22,7 +20,7 @@ class CustomBottomBar extends StatelessWidget {
       type: BottomBarEnum.Lock,
     ),
     BottomMenuModel(
-      icon: ImageConstant.imgFavoriteGray600,
+      icon: ImageConstant.imgEye,
       type: BottomBarEnum.Favoritegray600,
     ),
     BottomMenuModel(
@@ -37,12 +35,10 @@ class CustomBottomBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<HomeScreenContainerController>(
       init: HomeScreenContainerController(),
-      builder: (controller) =>  Container(
+      builder: (controller) => Container(
         height: getVerticalSize(66),
         decoration: BoxDecoration(
-          color: ColorConstant.whiteA700,
-          boxShadow: [BoxShadow(color: ColorConstant.shadowColor,offset: Offset(0,4),blurRadius: 16)]
-        ),
+            color: ColorConstant.whiteA700, boxShadow: [BoxShadow(color: ColorConstant.shadowColor, offset: Offset(0, 4), blurRadius: 16)]),
         child: BottomNavigationBar(
           backgroundColor: Colors.transparent,
           showSelectedLabels: false,

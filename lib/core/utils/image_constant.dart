@@ -1,9 +1,13 @@
 class ImageConstant {
   static String logo = 'assets/images/logo.png';
 
+  static String splashBanner = 'assets/images/splashBanner.png';
+
   static String imagePath = "assets/images/";
 
   static String imgLovelysportco = 'assets/images/img_lovelysportco.png';
+
+  static String profile = 'assets/images/noti1.png';
 
   static String imgPngegg13 = 'assets/images/img_pngegg1_3.png';
 

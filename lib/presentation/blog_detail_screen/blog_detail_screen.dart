@@ -37,7 +37,6 @@ class BlogDetailScreen extends GetWidget<BlogDetailController> {
                                   CustomImageView(
                                       imagePath: ImageConstant.logo,
                                       height: getVerticalSize(200),
-                                      width: getHorizontalSize(200),
                                       radius: BorderRadius.circular(getHorizontalSize(8)))
                                 ]))),
                         Container(

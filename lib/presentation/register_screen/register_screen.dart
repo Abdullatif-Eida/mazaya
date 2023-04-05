@@ -40,9 +40,6 @@ class RegisterScreen extends GetWidget<RegisterController> {
                             height: getSize(
                               80,
                             ),
-                            width: getSize(
-                              80,
-                            ),
                           ),
                           Padding(
                             padding: getPadding(
@@ -180,6 +177,7 @@ class RegisterScreen extends GetWidget<RegisterController> {
                                   margin: getMargin(
                                     top: 8,
                                   ),
+                                  onTap: () {},
                                   validator: (value) {
                                     if (!isText(value)) {
                                       return "الرجاء إدخال نص صحيح";

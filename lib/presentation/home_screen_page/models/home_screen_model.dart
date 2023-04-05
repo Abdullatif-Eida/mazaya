@@ -19,6 +19,17 @@ class HomeScreenModel {
     new HomescreenItemModel("أنف و حنجرة", "\$21.00", "img_imageremovebgpreview1.png", ""),
   ].obs;
 
+  RxList<HomescreenItemModel> doctors = [
+    new HomescreenItemModel("طبية", "", "img_imageremovebgpreview1.png", ""),
+    new HomescreenItemModel("قلبية", "", "img_imageremovebgpreview1.png", ""),
+    new HomescreenItemModel("نفسية", "", "img_imageremovebgpreview1.png", ""),
+    new HomescreenItemModel("عضلية", "", "img_imageremovebgpreview1.png", ""),
+    new HomescreenItemModel("عينية", "", "img_imageremovebgpreview1.png", ""),
+    new HomescreenItemModel("عظمية", "", "img_imageremovebgpreview1.png", ""),
+    new HomescreenItemModel("عصبية", "", "img_imageremovebgpreview1.png", ""),
+    new HomescreenItemModel("أنف و حنجرة", "", "img_imageremovebgpreview1.png", ""),
+  ].obs;
+
   RxList<ListnameItemModel> listnameItemList =
       [ListnameItemModel("Men’s Nike Shoes", "\$45.00", "featured1.png"), ListnameItemModel("Men’s Sparcle Shoes", "\$45.00", "featured2.png")].obs;
 

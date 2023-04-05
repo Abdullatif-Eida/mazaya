@@ -41,7 +41,7 @@ class PasswordChangedDialog extends StatelessWidget {
               top: 16,
             ),
             child: Text(
-              "msg_password_changed".tr,
+              "تم تغير كلمة السر بنجاح".tr,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
               style: AppStyle.txtSFUITextSemibold18Black900,
@@ -52,14 +52,14 @@ class PasswordChangedDialog extends StatelessWidget {
               top: 16,
             ),
             child: Text(
-              "msg_your_password_has".tr,
+              "تم تغير كلمة السر بنجاح".tr,
               maxLines: null,
               textAlign: TextAlign.center,
               style: AppStyle.txtBody,
             ),
           ),
           CustomButton(
-            onTap: (){
+            onTap: () {
               Get.toNamed(AppRoutes.loginScreen);
             },
             height: getVerticalSize(
@@ -68,7 +68,7 @@ class PasswordChangedDialog extends StatelessWidget {
             width: getHorizontalSize(
               240,
             ),
-            text: "lbl_ok".tr,
+            text: "تم".tr,
             margin: getMargin(
               top: 32,
             ),
