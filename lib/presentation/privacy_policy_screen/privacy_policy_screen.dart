@@ -49,24 +49,15 @@ class PrivacyPolicyScreen extends GetWidget<PrivacyPolicyController> {
                                   TextSpan(
                                       text: "".tr,
                                       style: TextStyle(
-                                          color: ColorConstant.black900,
-                                          fontSize: getFontSize(17),
-                                          fontFamily: 'SF UI Text',
-                                          fontWeight: FontWeight.w700)),
+                                          color: ColorConstant.black900, fontSize: getFontSize(17), fontFamily: 'PNU', fontWeight: FontWeight.w700)),
                                   TextSpan(
                                       text: "".tr,
                                       style: TextStyle(
-                                          color: ColorConstant.black900,
-                                          fontSize: getFontSize(17),
-                                          fontFamily: 'SF UI Text',
-                                          fontWeight: FontWeight.w400)),
+                                          color: ColorConstant.black900, fontSize: getFontSize(17), fontFamily: 'PNU', fontWeight: FontWeight.w400)),
                                   TextSpan(
                                       text: "حماية البينات".tr,
                                       style: TextStyle(
-                                          color: ColorConstant.black900,
-                                          fontSize: getFontSize(17),
-                                          fontFamily: 'SF UI Text',
-                                          fontWeight: FontWeight.w700))
+                                          color: ColorConstant.black900, fontSize: getFontSize(17), fontFamily: 'PNU', fontWeight: FontWeight.w700))
                                 ]),
                                 textAlign: TextAlign.left),
                             Container(

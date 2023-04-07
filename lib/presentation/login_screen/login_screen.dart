@@ -215,7 +215,7 @@ class LoginScreen extends GetWidget<LoginController> {
                             fontSize: getFontSize(
                               17,
                             ),
-                            fontFamily: 'SF UI Text',
+                            fontFamily: 'PNU',
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -226,7 +226,7 @@ class LoginScreen extends GetWidget<LoginController> {
                             fontSize: getFontSize(
                               18,
                             ),
-                            fontFamily: 'SF UI Text',
+                            fontFamily: 'PNU',
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -238,7 +238,7 @@ class LoginScreen extends GetWidget<LoginController> {
                             fontSize: getFontSize(
                               18,
                             ),
-                            fontFamily: 'SF UI Text',
+                            fontFamily: 'PNU',
                             fontWeight: FontWeight.w600,
                           ),
                         ),

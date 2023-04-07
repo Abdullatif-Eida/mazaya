@@ -147,7 +147,7 @@ class CheckOutThreeScreen extends GetWidget<CheckOutThreeController> {
                   //                                       fontSize: getFontSize(
                   //                                         15,
                   //                                       ),
-                  //                                       fontFamily: 'SF UI Text',
+                  //                                       fontFamily: 'PNU',
                   //                                       fontWeight: FontWeight.w400,
                   //                                       height: getVerticalSize(
                   //                                         1.20,

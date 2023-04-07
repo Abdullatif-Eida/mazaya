@@ -70,7 +70,7 @@ class CartItemWidget extends StatelessWidget {
           ),
           Container(
             margin: getMargin(
-              left: 16,
+              right: 16,
               top: 8,
               bottom: 8,
             ),
@@ -111,7 +111,7 @@ class CartItemWidget extends StatelessWidget {
           ),
           Spacer(),
           Container(
-            margin: getMargin(top: 50, right: 8, bottom: 8),
+            margin: getMargin(top: 50, left: 8, bottom: 8),
             child: GetBuilder<CartController>(
               init: CartController(CartModel().obs),
               builder: (controller) => Row(

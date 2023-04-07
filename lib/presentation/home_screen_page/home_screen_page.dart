@@ -1,5 +1,7 @@
 import 'package:shoes_app/presentation/home_screen_container_screen/controller/home_screen_container_controller.dart';
 import 'package:shoes_app/presentation/home_screen_page/drawer.dart';
+import 'package:shoes_app/widgets/custom_button.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../home_screen_page/widgets/homescreen_item_widget.dart';
 import '../home_screen_page/widgets/listname_item_widget.dart';
@@ -22,11 +24,13 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 class HomeScreenPage extends StatelessWidget {
   HomeScreenController controller = Get.put(HomeScreenController(HomeScreenModel().obs));
   HomeScreenContainerController homeScreenContainerController = Get.put(HomeScreenContainerController());
-
+  final GlobalKey<ScaffoldState> _key = GlobalKey(); // Create a key
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        key: _key,
+        drawer: DrawerWidget(),
         resizeToAvoidBottomInset: false,
         backgroundColor: ColorConstant.whiteA700,
         appBar: CustomAppBar(
@@ -34,15 +38,12 @@ class HomeScreenPage extends StatelessWidget {
             72,
           ),
           leadingWidth: 54,
-          leading: AppbarImage(
-            height: getSize(
-              44,
+          leading: GestureDetector(
+            onTap: () => _key.currentState!.openDrawer(),
+            child: Icon(
+              Icons.menu,
+              color: Colors.black,
             ),
-            width: getSize(
-              44,
-            ),
-            imagePath: ImageConstant.logo,
-            margin: getMargin(left: 10, bottom: 20, top: 20),
           ),
           title: Text(
             "مزايا",
@@ -76,66 +77,31 @@ class HomeScreenPage extends StatelessWidget {
           child: SingleChildScrollView(
             child: Padding(
               padding: getPadding(
-                left: 20,
                 bottom: 5,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  CustomTextFormField(
-                    onTap: () {
-                      Get.toNamed(AppRoutes.searchScreen);
-                    },
-                    controller: controller.groupThreeController,
-                    hintText: "ابحث عن المنتج المراد".tr,
-                    margin: getMargin(
-                      right: 20,
-                    ),
-                    variant: TextFormFieldVariant.FillGray100,
-                    padding: TextFormFieldPadding.PaddingT13_2,
-                    textInputAction: TextInputAction.done,
-                    prefix: Container(
-                      margin: getMargin(
-                        left: 16,
-                        top: 12,
-                        right: 16,
-                        bottom: 12,
-                      ),
-                      child: CustomImageView(
-                        svgPath: ImageConstant.imgContrast,
-                      ),
-                    ),
-                    prefixConstraints: BoxConstraints(
-                      maxHeight: getVerticalSize(
-                        48,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: getPadding(
-                      top: 24,
-                    ),
-                    child: GetBuilder<HomeScreenController>(
-                      init: HomeScreenController(HomeScreenModel().obs),
-                      builder: (controller) => CarouselSlider.builder(
-                        options: CarouselOptions(
-                          height: getVerticalSize(
-                            140,
-                          ),
-                          autoPlay: true,
-                          initialPage: 0,
-                          viewportFraction: 1,
-                          scrollDirection: Axis.horizontal,
-                          onPageChanged: (index, reason) {
-                            controller.onChangeIndex(index);
-                          },
+                  GetBuilder<HomeScreenController>(
+                    init: HomeScreenController(HomeScreenModel().obs),
+                    builder: (controller) => CarouselSlider.builder(
+                      options: CarouselOptions(
+                        height: getVerticalSize(
+                          255,
                         ),
-                        itemCount: controller.homeScreenModelObj.value.sliderlovelysportcoItemList.length,
-                        itemBuilder: (context, index, realIndex) {
-                          return SliderlovelysportcoItemWidget(controller.homeScreenModelObj.value.sliderlovelysportcoItemList[index]);
+                        autoPlay: true,
+                        initialPage: 0,
+                        viewportFraction: 1,
+                        scrollDirection: Axis.horizontal,
+                        onPageChanged: (index, reason) {
+                          controller.onChangeIndex(index);
                         },
                       ),
+                      itemCount: controller.homeScreenModelObj.value.sliderlovelysportcoItemList.length,
+                      itemBuilder: (context, index, realIndex) {
+                        return SliderlovelysportcoItemWidget(controller.homeScreenModelObj.value.sliderlovelysportcoItemList[index]);
+                      },
                     ),
                   ),
                   GetBuilder<HomeScreenController>(
@@ -175,190 +141,41 @@ class HomeScreenPage extends StatelessWidget {
                     height: getVerticalSize(24),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(right: 22),
-                    child: GetBuilder<HomeScreenController>(
-                      init: HomeScreenController(HomeScreenModel().obs),
-                      builder: (controller) => Container(
-                        height: getVerticalSize(40),
-                        child: ListView.separated(
-                          separatorBuilder: (context, index) {
-                            return SizedBox(
-                              width: getVerticalSize(24),
-                            );
-                          },
-                          scrollDirection: Axis.horizontal,
-                          itemCount: controller.homeScreenModelObj.value.categoryList.length,
-                          itemBuilder: (context, index) {
-                            return GestureDetector(
-                              onTap: () {
-                                controller.setCategory(index);
-                                homeScreenContainerController.change(1);
-                              },
-                              child: Container(
-                                height: getVerticalSize(40),
-                                alignment: Alignment.center,
-                                padding: getPadding(
-                                  left: 24,
-                                  right: 24,
-                                ),
-                                // ignore: unrelated_type_equality_checks
-                                decoration: controller.categoryIndex == index
-                                    ? AppDecoration.txtBlack.copyWith(
-                                        borderRadius: BorderRadiusStyle.txtRoundedBorder8,
-                                      )
-                                    : AppDecoration.txtWhite.copyWith(
-                                        borderRadius: BorderRadiusStyle.txtRoundedBorder8,
-                                      ),
-                                child: Text(
-                                  controller.homeScreenModelObj.value.categoryList[index],
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.left,
-                                  // ignore: unrelated_type_equality_checks
-                                  style: controller.categoryIndex == index ? AppStyle.txtBodyWhiteA700 : AppStyle.txtBodyBlack900,
-                                ),
-                              ),
-                            );
-                          },
-                        ),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    height: getVerticalSize(
-                      151,
-                    ),
-                    margin: getMargin(top: 24, right: 20),
-                    child: Stack(
-                      alignment: Alignment.centerRight,
-                      children: [
-                        Align(
-                          alignment: Alignment.topCenter,
-                          child: Container(
-                            height: getVerticalSize(
-                              140,
-                            ),
-                            padding: getPadding(
-                              left: 24,
-                              top: 27,
-                              bottom: 27,
-                            ),
-                            decoration: AppDecoration.fillGray10001.copyWith(
-                              borderRadius: BorderRadiusStyle.roundedBorder8,
-                            ),
-                            child: Stack(
-                              alignment: Alignment.topLeft,
-                              children: [
-                                Align(
-                                  alignment: Alignment.topLeft,
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        "عرض خاص على أطباء الأسنان".tr,
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.left,
-                                        style: AppStyle.txtGamjaFlowerRegular17,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Positioned(
-                                  left: 45,
-                                  top: 35,
-                                  child: Text(
-                                    "أحصل على العرض".tr,
-                                    overflow: TextOverflow.ellipsis,
-                                    textAlign: TextAlign.right,
-                                    style: AppStyle.txtSFProDisplaySemibold21Black900,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        CustomImageView(
-                          imagePath: ImageConstant.imgImageremovebgpreview1,
-                          height: getVerticalSize(
-                            120,
-                          ),
-                          width: getHorizontalSize(
-                            110,
-                          ),
-                          alignment: Alignment.centerRight,
-                          margin: getMargin(
-                            right: 2,
-                          ),
-                          fit: BoxFit.fill,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: getPadding(
-                      top: 15,
-                      right: 20,
-                    ),
+                    padding: getPadding(right: 12, left: 12),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "منتجات عليها تخفيض".tr,
+                          "مزودي الخدمات".tr,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
                           style: AppStyle.txtSFUITextSemibold19,
                         ),
-                        Padding(
-                          padding: getPadding(
-                            top: 2,
-                            bottom: 2,
-                          ),
-                          child: GestureDetector(
-                            onTap: () {
-                              Get.toNamed(AppRoutes.bestSellingProductScreen);
-                            },
-                            child: Text(
-                              "جميع المنتجات".tr,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.left,
-                              style: AppStyle.txtSFUITextRegular15Black900,
-                            ),
-                          ),
-                        ),
                       ],
                     ),
                   ),
-                  Padding(
-                    padding: getPadding(
-                      top: 13,
-                      right: 20,
+                  Container(
+                    height: getVerticalSize(
+                      150,
                     ),
-                    child: GetBuilder<HomeScreenController>(
-                      init: HomeScreenController(HomeScreenModel().obs),
-                      builder: (controller) => GridView.builder(
-                        shrinkWrap: true,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          mainAxisExtent: getVerticalSize(
-                            246,
-                          ),
-                          crossAxisCount: 2,
-                          mainAxisSpacing: getHorizontalSize(
-                            16,
-                          ),
-                          crossAxisSpacing: getHorizontalSize(
-                            16,
-                          ),
-                        ),
-                        physics: NeverScrollableScrollPhysics(),
-                        itemCount: 4,
+                    child: Obx(
+                      () => ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        separatorBuilder: (context, index) {
+                          return SizedBox(
+                            height: getVerticalSize(
+                              18,
+                            ),
+                          );
+                        },
+                        itemCount: controller.homeScreenModelObj.value.listnameItemList.length,
                         itemBuilder: (context, index) {
-                          HomescreenItemModel model = controller.homeScreenModelObj.value.homescreenItemList[index];
+                          ListnameItemModel model = controller.homeScreenModelObj.value.listnameItemList[index];
                           return GestureDetector(
                             onTap: () {
-                              Get.toNamed(AppRoutes.productDetailScreen);
+                              Get.toNamed(AppRoutes.docotorScreen);
                             },
-                            child: HomescreenItemWidget(
+                            child: ListnameItemWidget(
                               model,
                             ),
                           );
@@ -366,135 +183,74 @@ class HomeScreenPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  // Padding(
-                  //   padding: getPadding(
-                  //     top: 24,
-                  //     right: 20,
-                  //   ),
-                  //   child: Row(
-                  //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  //     children: [
-                  //       Text(
-                  //         "msg_featured_product".tr,
-                  //         overflow: TextOverflow.ellipsis,
-                  //         textAlign: TextAlign.left,
-                  //         style: AppStyle.txtSFUITextSemibold19,
-                  //       ),
-                  //       Padding(
-                  //         padding: getPadding(
-                  //           top: 3,
-                  //           bottom: 1,
-                  //         ),
-                  //         child: Text(
-                  //           "lbl_view_all".tr,
-                  //           overflow: TextOverflow.ellipsis,
-                  //           textAlign: TextAlign.left,
-                  //           style: AppStyle.txtSFUITextRegular15Black900,
-                  //         ),
-                  //       ),
-                  //     ],
-                  //   ),
-                  // ),
-                  // Align(
-                  //   alignment: Alignment.centerRight,
-                  //   child: Container(
-                  //     height: getVerticalSize(
-                  //       225,
-                  //     ),
-                  //     child: Obx(
-                  //       () => ListView.separated(
-                  //         padding: getPadding(
-                  //           top: 16,
-                  //         ),
-                  //         scrollDirection: Axis.horizontal,
-                  //         separatorBuilder: (context, index) {
-                  //           return SizedBox(
-                  //             height: getVerticalSize(
-                  //               18,
-                  //             ),
-                  //           );
-                  //         },
-                  //         itemCount: controller.homeScreenModelObj.value.listnameItemList.length,
-                  //         itemBuilder: (context, index) {
-                  //           ListnameItemModel model = controller.homeScreenModelObj.value.listnameItemList[index];
-                  //           return GestureDetector(
-                  //             onTap: () {
-                  //               Get.toNamed(AppRoutes.productDetailScreen);
-                  //             },
-                  //             child: ListnameItemWidget(
-                  //               model,
-                  //             ),
-                  //           );
-                  //         },
-                  //       ),
-                  //     ),
-                  //   ),
-                  // ),
-
                   Padding(
-                    padding: getPadding(
-                      top: 24,
-                      right: 20,
-                    ),
+                    padding: getPadding(top: 15, right: 12, left: 12),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "المدونة".tr,
+                          "احدث عروض مزايا".tr,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
                           style: AppStyle.txtSFUITextSemibold19,
                         ),
-                        Padding(
-                          padding: getPadding(
-                            top: 2,
-                            bottom: 2,
-                          ),
-                          child: Text(
-                            "عرض الكل".tr,
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.left,
-                            style: AppStyle.txtSFUITextRegular15Black900,
-                          ),
-                        ),
                       ],
                     ),
                   ),
-
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: Container(
-                      height: getVerticalSize(
-                        263,
-                      ),
-                      child: Obx(
-                        () => ListView.separated(
-                          padding: getPadding(
-                            top: 16,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: Container(
+                        height: getVerticalSize(
+                          263,
+                        ),
+                        child: Obx(
+                          () => ListView.separated(
+                            padding: getPadding(
+                              top: 16,
+                            ),
+                            scrollDirection: Axis.horizontal,
+                            separatorBuilder: (context, index) {
+                              return SizedBox(
+                                height: getVerticalSize(
+                                  16,
+                                ),
+                              );
+                            },
+                            itemCount: controller.homeScreenModelObj.value.listwalkingfitnessItemList.length,
+                            itemBuilder: (context, index) {
+                              ListwalkingfitnessItemModel model = controller.homeScreenModelObj.value.listwalkingfitnessItemList[index];
+                              return GestureDetector(
+                                onTap: () {
+                                  Get.toNamed(AppRoutes.blogDetailScreen);
+                                },
+                                child: ListwalkingfitnessItemWidget(
+                                  model,
+                                ),
+                              );
+                            },
                           ),
-                          scrollDirection: Axis.horizontal,
-                          separatorBuilder: (context, index) {
-                            return SizedBox(
-                              height: getVerticalSize(
-                                16,
-                              ),
-                            );
-                          },
-                          itemCount: controller.homeScreenModelObj.value.listwalkingfitnessItemList.length,
-                          itemBuilder: (context, index) {
-                            ListwalkingfitnessItemModel model = controller.homeScreenModelObj.value.listwalkingfitnessItemList[index];
-                            return GestureDetector(
-                              onTap: () {
-                                Get.toNamed(AppRoutes.blogDetailScreen);
-                              },
-                              child: ListwalkingfitnessItemWidget(
-                                model,
-                              ),
-                            );
-                          },
                         ),
                       ),
                     ),
+                  ),
+                  SizedBox(height: 15),
+                  Image.network(
+                      "https://images.squarespace-cdn.com/content/v1/5137da26e4b0fcbdce61eb9e/1539981474338-ZGPMCWHK7DDLW6M92INC/Be+Extraordinary+Banner.png?format=1000w"),
+                  SizedBox(height: 15),
+                  GetBuilder<HomeScreenContainerController>(
+                    init: HomeScreenContainerController(),
+                    builder: (controller) => CustomButton(
+                        onTap: () {
+                          launchUrl(
+                            Uri.parse("http://mazaya-vip.com/"),
+                            mode: LaunchMode.externalApplication,
+                          );
+                        },
+                        height: getVerticalSize(48),
+                        text: "إنضم الان لشبكتنا الطبية",
+                        margin: getMargin(bottom: 26, right: 20, left: 20)),
                   ),
                 ],
               ),

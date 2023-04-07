@@ -12,18 +12,17 @@ class SliderlovelysportcoItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: getVerticalSize(
-        140,
+    return Padding(
+      padding: const EdgeInsets.all(2.0),
+      child: Container(
+        decoration: BoxDecoration(
+            boxShadow: [BoxShadow(color: Colors.black26, spreadRadius: 0, blurRadius: 2, offset: Offset(0, 0))],
+            image: DecorationImage(
+              image: AssetImage(ImageConstant.imagePath + sliderlovelysportcoItemModelObj),
+              fit: BoxFit.fill,
+            ),
+            borderRadius: BorderRadius.circular(getHorizontalSize(8))),
       ),
-      margin: getMargin(right: 16),
-      decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-                ImageConstant.imagePath + sliderlovelysportcoItemModelObj),
-            fit: BoxFit.fill,
-          ),
-          borderRadius: BorderRadius.circular(getHorizontalSize(8))),
     );
   }
 }

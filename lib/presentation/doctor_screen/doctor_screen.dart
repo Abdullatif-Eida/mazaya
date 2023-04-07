@@ -1,3 +1,5 @@
+import 'package:shoes_app/presentation/doctor_detail_screen/doctor_detail_screen.dart';
+
 import '../filter_bottomsheet/controller/filter_controller.dart';
 import '../filter_bottomsheet/filter_bottomsheet.dart';
 import '../home_screen_page/controller/home_screen_controller.dart';
@@ -17,73 +19,65 @@ import '../my_favorite_page/models/my_favorite_model.dart';
 class DoctorScreen extends GetWidget<HomeScreenController> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: ColorConstant.gray100,
-        appBar: CustomAppBar(
-            height: getVerticalSize(58),
-            leadingWidth: 44,
-            leading: AppbarImage(
-                height: getSize(24),
-                width: getSize(24),
-                svgPath: ImageConstant.imgArrowright,
-                margin: getMargin(left: 0, top: 17, bottom: 17),
-                onTap: () {
-                  //  controller.change(0);
-                }),
-            title: AppbarTitle(text: "الدكاترة".tr, margin: getMargin(left: 16)),
-            actions: [
-              GestureDetector(
-                onTap: () {
-                  Get.bottomSheet(
-                    FilterBottomsheet(
-                      Get.put(
-                        FilterController(),
-                      ),
+    return Scaffold(
+      appBar: CustomAppBar(
+          height: getVerticalSize(58),
+          leadingWidth: 44,
+          leading: AppbarImage(
+              height: getSize(24),
+              width: getSize(24),
+              svgPath: ImageConstant.imgArrowright,
+              margin: getMargin(left: 0, top: 17, bottom: 17),
+              onTap: () {
+                Get.back();
+                //  controller.change(0);
+              }),
+          title: AppbarTitle(text: "الدكاترة".tr, margin: getMargin(left: 16)),
+          actions: [
+            GestureDetector(
+              onTap: () {
+                Get.bottomSheet(
+                  FilterBottomsheet(
+                    Get.put(
+                      FilterController(),
                     ),
-                    isScrollControlled: true,
-                  );
-                },
-                child: AppbarImage(height: getSize(24), width: getSize(24), margin: getMargin(left: 20, top: 17, right: 20, bottom: 17)),
-              )
-            ],
-            styleType: Style.bgFillWhiteA700),
-        body: Container(
-          margin: getMargin(top: 11),
-          width: double.maxFinite,
-          decoration: BoxDecoration(color: ColorConstant.whiteA700),
-          child: Padding(
-            padding: getPadding(left: 20, top: 15, right: 20),
-            child: Obx(
-              () => GridView.builder(
-                shrinkWrap: true,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  mainAxisExtent: getVerticalSize(
-                    246,
                   ),
-                  crossAxisCount: 2,
-                  mainAxisSpacing: getHorizontalSize(
-                    16,
-                  ),
-                  crossAxisSpacing: getHorizontalSize(
-                    16,
-                  ),
-                ),
-                itemCount: controller.homeScreenModelObj.value.homescreenItemList.length,
-                itemBuilder: (context, index) {
-                  HomescreenItemModel model = controller.homeScreenModelObj.value.doctors[index];
-                  return GestureDetector(
-                    onTap: () {
-                      Get.toNamed(AppRoutes.doctorDetailScreen);
-                    },
-                    child: HomescreenItemWidget(
-                      model,
-                    ),
-                  );
-                },
-              ),
+                  isScrollControlled: true,
+                );
+              },
+              child: AppbarImage(height: getSize(24), width: getSize(24), margin: getMargin(left: 20, top: 17, right: 20, bottom: 17)),
+            )
+          ],
+          styleType: Style.bgFillWhiteA700),
+      body: Padding(
+        padding: getPadding(left: 20, top: 15, right: 20),
+        child: GridView.builder(
+          shrinkWrap: true,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            mainAxisExtent: getVerticalSize(
+              246,
+            ),
+            crossAxisCount: 2,
+            mainAxisSpacing: getHorizontalSize(
+              16,
+            ),
+            crossAxisSpacing: getHorizontalSize(
+              16,
             ),
           ),
+          itemCount: controller.homeScreenModelObj.value.doctors.length,
+          itemBuilder: (context, index) {
+            HomescreenItemModel model = controller.homeScreenModelObj.value.doctors[index];
+            return GestureDetector(
+              onTap: () {
+                Get.toNamed(AppRoutes.doctorDetailScreen);
+                // Navigator.of(context).push(MaterialPageRoute(builder: (context) => DoctorDetailsScreen()));
+              },
+              child: HomescreenItemWidget(
+                model,
+              ),
+            );
+          },
         ),
       ),
     );

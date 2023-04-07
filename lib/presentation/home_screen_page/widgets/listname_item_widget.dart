@@ -14,102 +14,118 @@ class ListnameItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IntrinsicWidth(
-      child: Align(
-        alignment: Alignment.centerRight,
-        child: Container(
-          height: getVerticalSize(
-            209,
-          ),
-          width: getHorizontalSize(
-            262,
-          ),
+    return Padding(
+      padding: const EdgeInsets.all(4.0),
+      child: Container(
           margin: getMargin(
             right: 17,
           ),
-          child: Stack(
-            alignment: Alignment.bottomCenter,
-            children: [
-              Align(
-                alignment: Alignment.center,
-                child: Container(
-                  width: double.infinity,
-                  height: double.infinity,
-                  padding: getPadding(
-                    all: 16,
-                  ),
-                  decoration: AppDecoration.fillGray100.copyWith(
-                    borderRadius: BorderRadiusStyle.roundedBorder8,
-                  ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            child: Text(
-                              listnameItemModelObj.name,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.left,
-                              style: AppStyle.txtHeadline,
-                            ),
-                          ),
-                          CustomIconButton(
-                            height: 24,
-                            width: 24,
-                            child: CustomImageView(
-                              svgPath: ImageConstant.imgFavorite,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Padding(
-                        padding: getPadding(
-                          top: 4,
-                        ),
-                        child: Text(
-                          listnameItemModelObj.price,
-                          overflow: TextOverflow.ellipsis,
-                          textAlign: TextAlign.left,
-                          style: AppStyle.txtSFUITextRegular15Black900,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              CustomImageView(
-                svgPath: ImageConstant.imgRectangle77,
-                height: getSize(
-                  159,
-                ),
-                width: getSize(
-                  159,
-                ),
-                alignment: Alignment.bottomCenter,
-              ),
-              Align(
-                alignment: Alignment.center,
-                child: CustomImageView(
-                  imagePath: ImageConstant.imagePath+listnameItemModelObj.image,
-                  height: getVerticalSize(
-                    208,
-                  ),
-                  width: getHorizontalSize(
-                    263,
-                  ),
-
-                  alignment: Alignment.center,
-                  fit: BoxFit.fill,
-                ),
-              ),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(7),
+            color: Colors.white,
+            boxShadow: const [
+              BoxShadow(
+                blurRadius: 5,
+                color: Color(0x44111417),
+                offset: Offset(0, 2),
+              )
             ],
           ),
-        ),
-      ),
+          child: Column(
+            children: [
+              Text("الحساسية"),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0, right: 8),
+                child: Image.network(
+                  "https://www.healthcareturkey.com/front/img/dr.png",
+                  height: 80,
+                  width: 80,
+                ),
+              )
+            ],
+          )),
     );
   }
 }
+
+// Stack(
+//             alignment: Alignment.bottomCenter,
+//             children: [
+//               Align(
+//                 alignment: Alignment.center,
+//                 child: Container(
+//                   width: double.infinity,
+//                   height: double.infinity,
+//                   padding: getPadding(
+//                     all: 16,
+//                   ),
+//                   decoration: AppDecoration.fillGray100.copyWith(
+//                     borderRadius: BorderRadiusStyle.roundedBorder8,
+//                   ),
+//                   child: Column(
+//                     mainAxisSize: MainAxisSize.min,
+//                     crossAxisAlignment: CrossAxisAlignment.start,
+//                     mainAxisAlignment: MainAxisAlignment.start,
+//                     children: [
+//                       Row(
+//                         crossAxisAlignment: CrossAxisAlignment.start,
+//                         children: [
+//                           Expanded(
+//                             child: Text(
+//                               listnameItemModelObj.name,
+//                               overflow: TextOverflow.ellipsis,
+//                               textAlign: TextAlign.left,
+//                               style: AppStyle.txtHeadline,
+//                             ),
+//                           ),
+//                           CustomIconButton(
+//                             height: 24,
+//                             width: 24,
+//                             child: CustomImageView(
+//                               svgPath: ImageConstant.imgFavorite,
+//                             ),
+//                           ),
+//                         ],
+//                       ),
+//                       Padding(
+//                         padding: getPadding(
+//                           top: 4,
+//                         ),
+//                         child: Text(
+//                           listnameItemModelObj.price,
+//                           overflow: TextOverflow.ellipsis,
+//                           textAlign: TextAlign.left,
+//                           style: AppStyle.txtSFUITextRegular15Black900,
+//                         ),
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//               ),
+//               CustomImageView(
+//                 svgPath: ImageConstant.imgRectangle77,
+//                 height: getSize(
+//                   159,
+//                 ),
+//                 width: getSize(
+//                   159,
+//                 ),
+//                 alignment: Alignment.bottomCenter,
+//               ),
+//               Align(
+//                 alignment: Alignment.center,
+//                 child: CustomImageView(
+//                   imagePath: ImageConstant.imagePath + listnameItemModelObj.image,
+//                   height: getVerticalSize(
+//                     208,
+//                   ),
+//                   width: getHorizontalSize(
+//                     263,
+//                   ),
+//                   alignment: Alignment.center,
+//                   fit: BoxFit.fill,
+//                 ),
+//               ),
+//             ],
+//           ),
+       

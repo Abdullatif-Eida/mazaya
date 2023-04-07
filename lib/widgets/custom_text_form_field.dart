@@ -126,7 +126,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       fontSize: getFontSize(
         13,
       ),
-      fontFamily: 'SF UI Text',
+      fontFamily: 'PNU',
       fontWeight: FontWeight.w400,
       height: getVerticalSize(
         1.24,
@@ -142,7 +142,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           fontSize: getFontSize(
             17,
           ),
-          fontFamily: 'SF UI Text',
+          fontFamily: 'PNU',
           fontWeight: FontWeight.w400,
           height: getVerticalSize(
             1.24,
@@ -154,7 +154,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           fontSize: getFontSize(
             15,
           ),
-          fontFamily: 'SF UI Text',
+          fontFamily: 'PNU',
           fontWeight: FontWeight.w400,
           height: getVerticalSize(
             1.20,
@@ -166,7 +166,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           fontSize: getFontSize(
             17,
           ),
-          fontFamily: 'SF UI Text',
+          fontFamily: 'PNU',
           fontWeight: FontWeight.w400,
           height: getVerticalSize(
             1.24,

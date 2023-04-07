@@ -15,102 +15,58 @@ class HomescreenItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: getVerticalSize(
-        234,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20.0),
+        color: Colors.white,
+        border: (Border.all(width: 1.5, color: Colors.white)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 0,
+            blurRadius: 1,
+            offset: const Offset(0, 1),
+          ),
+        ],
       ),
-      child: Stack(
-        alignment: Alignment.bottomLeft,
+      // padding: const EdgeInsets.all(15),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
+          Expanded(
+            child: Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.only(topLeft: Radius.circular(16.0), topRight: Radius.circular(16)),
+                color: Colors.transparent,
+                image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: NetworkImage(
+                        "https://i.cbc.ca/1.6801410.1680639762!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/dr-jose-francois.jpg")),
+              ),
+            ),
+          ),
           Container(
-            margin: getMargin(
-              bottom: 49,
+            width: double.infinity,
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(16),
+                bottomRight: Radius.circular(16),
+              ),
             ),
-            padding: getPadding(left: 16, top: 8, bottom: 8, right: 16),
-            decoration: AppDecoration.fillGray100.copyWith(
-              borderRadius: BorderRadiusStyle.roundedBorder8,
-            ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        homescreenItemModelObj.name,
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.left,
-                        style: AppStyle.txtHeadline,
-                      ),
-                      Row(
-                        children: [
-                          homescreenItemModelObj.originalPrice.isEmpty
-                              ? Container()
-                              : Padding(
-                                  padding: getPadding(top: 3, right: 6),
-                                  child: Text(
-                                    homescreenItemModelObj.originalPrice,
-                                    overflow: TextOverflow.ellipsis,
-                                    textAlign: TextAlign.left,
-                                    style:
-                                        AppStyle.txtSFUITextRegular15Gray60001,
-                                  ),
-                                ),
-                          Padding(
-                            padding: getPadding(
-                              top: 3,
-                            ),
-                            child: Text(
-                              homescreenItemModelObj.price,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.left,
-                              style: AppStyle.txtSFUITextRegular15Black900,
-                            ),
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
+            child: Center(
+                child: Padding(
+              padding: const EdgeInsets.only(left: 8.0, right: 8, bottom: 4),
+              child: Text(
+                "الدكتور أحمد",
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 12,
                 ),
-                Padding(
-                  padding: getPadding(top: 10),
-                  child: CustomIconButton(
-                    height: 24,
-                    width: 24,
-                    child: CustomImageView(
-                      svgPath: ImageConstant.imgFavorite,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          CustomImageView(
-            svgPath: ImageConstant.imgRectangle77,
-            height: getSize(
-              131,
-            ),
-            width: getSize(
-              131,
-            ),
-            alignment: Alignment.bottomLeft,
-            margin: getMargin(
-              left: 16,
-              bottom: 48,
-            ),
-          ),
-          CustomImageView(
-            imagePath: ImageConstant.imagePath + homescreenItemModelObj.image,
-            height: getVerticalSize(
-              167,
-            ),
-            width: getHorizontalSize(
-              163,
-            ),
-            alignment: Alignment.bottomCenter,
-            fit: BoxFit.fill,
-          ),
+                maxLines: 1,
+              ),
+            )),
+          )
         ],
       ),
     );

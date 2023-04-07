@@ -6,7 +6,6 @@ import 'package:shoes_app/widgets/custom_button.dart';
 import 'package:shoes_app/widgets/custom_text_form_field.dart';
 
 class RegisterErrorOneScreen extends GetWidget<RegisterErrorOneController> {
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -80,15 +79,13 @@ class RegisterErrorOneScreen extends GetWidget<RegisterErrorOneController> {
                               ),
                               CustomTextFormField(
                                 focusNode: FocusNode(),
-                                controller:
-                                    controller.groupFiftyFourController,
+                                controller: controller.groupFiftyFourController,
                                 hintText: "lbl_john".tr,
                                 margin: getMargin(
                                   top: 8,
                                 ),
                                 variant: TextFormFieldVariant.OutlineBlack900,
-                                fontStyle:
-                                    TextFormFieldFontStyle.SFUITextRegular17,
+                                fontStyle: TextFormFieldFontStyle.SFUITextRegular17,
                               ),
                             ],
                           ),
@@ -109,8 +106,7 @@ class RegisterErrorOneScreen extends GetWidget<RegisterErrorOneController> {
                               ),
                               CustomTextFormField(
                                 focusNode: FocusNode(),
-                                controller:
-                                    controller.groupFiftyFiveController,
+                                controller: controller.groupFiftyFiveController,
                                 hintText: "lbl_enter_last_name".tr,
                                 margin: getMargin(
                                   top: 8,
@@ -141,17 +137,14 @@ class RegisterErrorOneScreen extends GetWidget<RegisterErrorOneController> {
                               ),
                               CustomTextFormField(
                                 focusNode: FocusNode(),
-                                controller:
-                                    controller.groupFiftySixController,
+                                controller: controller.groupFiftySixController,
                                 hintText: "msg_enter_email_address".tr,
                                 margin: getMargin(
                                   top: 8,
                                 ),
                                 textInputType: TextInputType.emailAddress,
                                 validator: (value) {
-                                  if (value == null ||
-                                      (!isValidEmail(value,
-                                          isRequired: true))) {
+                                  if (value == null || (!isValidEmail(value, isRequired: true))) {
                                     return "Please enter valid email";
                                   }
                                   return null;
@@ -176,17 +169,14 @@ class RegisterErrorOneScreen extends GetWidget<RegisterErrorOneController> {
                               ),
                               CustomTextFormField(
                                 focusNode: FocusNode(),
-                                controller:
-                                    controller.groupFiftySevenController,
+                                controller: controller.groupFiftySevenController,
                                 hintText: "lbl_enter_password".tr,
                                 margin: getMargin(
                                   top: 8,
                                 ),
                                 textInputType: TextInputType.visiblePassword,
                                 validator: (value) {
-                                  if (value == null ||
-                                      (!isValidPassword(value,
-                                          isRequired: true))) {
+                                  if (value == null || (!isValidPassword(value, isRequired: true))) {
                                     return "Please enter valid password";
                                   }
                                   return null;
@@ -212,8 +202,7 @@ class RegisterErrorOneScreen extends GetWidget<RegisterErrorOneController> {
                               ),
                               CustomTextFormField(
                                 focusNode: FocusNode(),
-                                controller:
-                                    controller.groupFiftyEightController,
+                                controller: controller.groupFiftyEightController,
                                 hintText: "msg_enter_confirm_password".tr,
                                 margin: getMargin(
                                   top: 8,
@@ -221,9 +210,7 @@ class RegisterErrorOneScreen extends GetWidget<RegisterErrorOneController> {
                                 textInputAction: TextInputAction.done,
                                 textInputType: TextInputType.visiblePassword,
                                 validator: (value) {
-                                  if (value == null ||
-                                      (!isValidPassword(value,
-                                          isRequired: true))) {
+                                  if (value == null || (!isValidPassword(value, isRequired: true))) {
                                     return "Please enter valid password";
                                   }
                                   return null;
@@ -285,7 +272,7 @@ class RegisterErrorOneScreen extends GetWidget<RegisterErrorOneController> {
                                               fontSize: getFontSize(
                                                 15,
                                               ),
-                                              fontFamily: 'SF UI Text',
+                                              fontFamily: 'PNU',
                                               fontWeight: FontWeight.w400,
                                             ),
                                           ),
@@ -296,7 +283,7 @@ class RegisterErrorOneScreen extends GetWidget<RegisterErrorOneController> {
                                               fontSize: getFontSize(
                                                 15,
                                               ),
-                                              fontFamily: 'SF UI Text',
+                                              fontFamily: 'PNU',
                                               fontWeight: FontWeight.w400,
                                             ),
                                           ),
@@ -307,7 +294,7 @@ class RegisterErrorOneScreen extends GetWidget<RegisterErrorOneController> {
                                               fontSize: getFontSize(
                                                 15,
                                               ),
-                                              fontFamily: 'SF UI Text',
+                                              fontFamily: 'PNU',
                                               fontWeight: FontWeight.w400,
                                             ),
                                           ),
@@ -344,7 +331,7 @@ class RegisterErrorOneScreen extends GetWidget<RegisterErrorOneController> {
                                     fontSize: getFontSize(
                                       17,
                                     ),
-                                    fontFamily: 'SF UI Text',
+                                    fontFamily: 'PNU',
                                     fontWeight: FontWeight.w400,
                                   ),
                                 ),
@@ -355,7 +342,7 @@ class RegisterErrorOneScreen extends GetWidget<RegisterErrorOneController> {
                                     fontSize: getFontSize(
                                       18,
                                     ),
-                                    fontFamily: 'SF UI Text',
+                                    fontFamily: 'PNU',
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
@@ -366,7 +353,7 @@ class RegisterErrorOneScreen extends GetWidget<RegisterErrorOneController> {
                                     fontSize: getFontSize(
                                       18,
                                     ),
-                                    fontFamily: 'SF UI Text',
+                                    fontFamily: 'PNU',
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),

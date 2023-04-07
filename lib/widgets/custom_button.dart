@@ -173,7 +173,7 @@ class CustomButton extends StatelessWidget {
           fontSize: getFontSize(
             14,
           ),
-          fontFamily: 'SF UI Text',
+          fontFamily: 'PNU',
           fontWeight: FontWeight.w600,
           height: getVerticalSize(
             1.21,
@@ -185,7 +185,7 @@ class CustomButton extends StatelessWidget {
           fontSize: getFontSize(
             14,
           ),
-          fontFamily: 'SF UI Text',
+          fontFamily: 'PNU',
           fontWeight: FontWeight.w600,
           height: getVerticalSize(
             1.21,
@@ -197,7 +197,7 @@ class CustomButton extends StatelessWidget {
           fontSize: getFontSize(
             15,
           ),
-          fontFamily: 'SF UI Text',
+          fontFamily: 'PNU',
           fontWeight: FontWeight.w400,
           height: getVerticalSize(
             1.20,
@@ -209,7 +209,7 @@ class CustomButton extends StatelessWidget {
           fontSize: getFontSize(
             15,
           ),
-          fontFamily: 'SF UI Text',
+          fontFamily: 'PNU',
           fontWeight: FontWeight.w400,
           height: getVerticalSize(
             1.20,
@@ -221,7 +221,7 @@ class CustomButton extends StatelessWidget {
           fontSize: getFontSize(
             18,
           ),
-          fontFamily: 'SF UI Text',
+          fontFamily: 'PNU',
           fontWeight: FontWeight.w600,
           height: getVerticalSize(
             1.22,
@@ -233,7 +233,7 @@ class CustomButton extends StatelessWidget {
           fontSize: getFontSize(
             18,
           ),
-          fontFamily: 'SF UI Text',
+          fontFamily: 'PNU',
           fontWeight: FontWeight.w600,
           height: getVerticalSize(
             1.22,

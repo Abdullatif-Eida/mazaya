@@ -7,7 +7,7 @@ class AppStyle {
     fontSize: getFontSize(
       15,
     ),
-    fontFamily: 'SF UI Text',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w500,
   );
 
@@ -16,7 +16,7 @@ class AppStyle {
     fontSize: getFontSize(
       15,
     ),
-    fontFamily: 'SF UI Text',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w500,
   );
 
@@ -25,7 +25,7 @@ class AppStyle {
     fontSize: getFontSize(
       13,
     ),
-    fontFamily: 'SF UI Text',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w400,
   );
 
@@ -34,7 +34,7 @@ class AppStyle {
     fontSize: getFontSize(
       15,
     ),
-    fontFamily: 'SF UI Text',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w400,
   );
 
@@ -43,7 +43,7 @@ class AppStyle {
     fontSize: getFontSize(
       15,
     ),
-    fontFamily: 'SF UI Text',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w400,
   );
 
@@ -52,7 +52,7 @@ class AppStyle {
     fontSize: getFontSize(
       18,
     ),
-    fontFamily: 'SF UI Text',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w600,
   );
 
@@ -61,7 +61,7 @@ class AppStyle {
     fontSize: getFontSize(
       9,
     ),
-    fontFamily: 'SF UI Text',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w400,
   );
 
@@ -70,7 +70,7 @@ class AppStyle {
     fontSize: getFontSize(
       15,
     ),
-    fontFamily: 'SF UI Text',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w400,
   );
 
@@ -79,7 +79,7 @@ class AppStyle {
     fontSize: getFontSize(
       17,
     ),
-    fontFamily: 'SF UI Text',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w400,
   );
 
@@ -88,7 +88,7 @@ class AppStyle {
     fontSize: getFontSize(
       17,
     ),
-    fontFamily: 'SF UI Text',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w700,
   );
 
@@ -97,7 +97,7 @@ class AppStyle {
     fontSize: getFontSize(
       21,
     ),
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w600,
   );
 
@@ -106,7 +106,7 @@ class AppStyle {
     fontSize: getFontSize(
       15,
     ),
-    fontFamily: 'SF UI Text',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w500,
   );
 
@@ -115,7 +115,7 @@ class AppStyle {
     fontSize: getFontSize(
       27,
     ),
-    fontFamily: 'SF UI Text',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w600,
   );
 
@@ -124,7 +124,7 @@ class AppStyle {
     fontSize: getFontSize(
       17,
     ),
-    fontFamily: 'SF UI Text',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w700,
   );
 
@@ -133,7 +133,7 @@ class AppStyle {
     fontSize: getFontSize(
       20,
     ),
-    fontFamily: 'Roboto',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w400,
   );
 
@@ -142,7 +142,7 @@ class AppStyle {
     fontSize: getFontSize(
       15,
     ),
-    fontFamily: 'SF UI Text',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w400,
   );
 
@@ -151,7 +151,7 @@ class AppStyle {
     fontSize: getFontSize(
       17,
     ),
-    fontFamily: 'Gamja Flower',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w400,
   );
 
@@ -160,7 +160,7 @@ class AppStyle {
     fontSize: getFontSize(
       17,
     ),
-    fontFamily: 'SF UI Text',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w400,
   );
 
@@ -169,7 +169,7 @@ class AppStyle {
     fontSize: getFontSize(
       17,
     ),
-    fontFamily: 'SF UI Text',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w400,
   );
 
@@ -178,7 +178,7 @@ class AppStyle {
     fontSize: getFontSize(
       21,
     ),
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w600,
   );
 
@@ -187,7 +187,7 @@ class AppStyle {
     fontSize: getFontSize(
       15,
     ),
-    fontFamily: 'SF UI Text',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w400,
   );
 
@@ -196,7 +196,7 @@ class AppStyle {
     fontSize: getFontSize(
       9,
     ),
-    fontFamily: 'Gilroy-Bold',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w400,
   );
 
@@ -205,7 +205,7 @@ class AppStyle {
     fontSize: getFontSize(
       17,
     ),
-    fontFamily: 'SF UI Text',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w400,
   );
 
@@ -214,7 +214,7 @@ class AppStyle {
     fontSize: getFontSize(
       37,
     ),
-    fontFamily: 'Berkshire Swash',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w400,
   );
 
@@ -223,7 +223,7 @@ class AppStyle {
     fontSize: getFontSize(
       16,
     ),
-    fontFamily: 'Roboto',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w400,
   );
 
@@ -232,7 +232,7 @@ class AppStyle {
     fontSize: getFontSize(
       17,
     ),
-    fontFamily: 'SF UI Text',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w400,
   );
 
@@ -241,7 +241,7 @@ class AppStyle {
     fontSize: getFontSize(
       15,
     ),
-    fontFamily: 'SF UI Text',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w400,
   );
 
@@ -250,7 +250,7 @@ class AppStyle {
     fontSize: getFontSize(
       37,
     ),
-    fontFamily: 'Berkshire Swash',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w400,
   );
 
@@ -259,7 +259,7 @@ class AppStyle {
     fontSize: getFontSize(
       18,
     ),
-    fontFamily: 'SF UI Text',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w600,
   );
 
@@ -268,7 +268,7 @@ class AppStyle {
     fontSize: getFontSize(
       17,
     ),
-    fontFamily: 'SF UI Text',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w400,
   );
 
@@ -277,7 +277,7 @@ class AppStyle {
     fontSize: getFontSize(
       19,
     ),
-    fontFamily: 'SF UI Text',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w600,
   );
 
@@ -286,7 +286,7 @@ class AppStyle {
     fontSize: getFontSize(
       15,
     ),
-    fontFamily: 'SF UI Text',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w400,
   );
 
@@ -295,7 +295,7 @@ class AppStyle {
     fontSize: getFontSize(
       14,
     ),
-    fontFamily: 'SF UI Text',
+    fontFamily: 'PNU',
     fontWeight: FontWeight.w600,
   );
 }

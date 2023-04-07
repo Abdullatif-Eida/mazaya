@@ -20,13 +20,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        visualDensity: VisualDensity.standard,
-      ),
+      theme: ThemeData(visualDensity: VisualDensity.standard, fontFamily: "PNU"),
       translations: AppLocalization(),
       locale: Locale("ar"), //Get.deviceLocale, //for setting localization strings
       fallbackLocale: const Locale("ar"),
       title: 'shoes_app',
+
       initialBinding: InitialBindings(),
       initialRoute: AppRoutes.initialRoute,
       getPages: AppRoutes.pages,

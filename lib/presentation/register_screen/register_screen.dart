@@ -401,7 +401,7 @@ class RegisterScreen extends GetWidget<RegisterController> {
                                                 fontSize: getFontSize(
                                                   15,
                                                 ),
-                                                fontFamily: 'SF UI Text',
+                                                fontFamily: 'PNU',
                                                 fontWeight: FontWeight.w400,
                                               ),
                                             ),
@@ -412,7 +412,7 @@ class RegisterScreen extends GetWidget<RegisterController> {
                                                 fontSize: getFontSize(
                                                   15,
                                                 ),
-                                                fontFamily: 'SF UI Text',
+                                                fontFamily: 'PNU',
                                                 fontWeight: FontWeight.w400,
                                               ),
                                             ),
@@ -423,7 +423,7 @@ class RegisterScreen extends GetWidget<RegisterController> {
                                                 fontSize: getFontSize(
                                                   15,
                                                 ),
-                                                fontFamily: 'SF UI Text',
+                                                fontFamily: 'PNU',
                                                 fontWeight: FontWeight.w400,
                                               ),
                                             ),
@@ -465,7 +465,7 @@ class RegisterScreen extends GetWidget<RegisterController> {
                                       fontSize: getFontSize(
                                         17,
                                       ),
-                                      fontFamily: 'SF UI Text',
+                                      fontFamily: 'PNU',
                                       fontWeight: FontWeight.w400,
                                     ),
                                   ),
@@ -476,7 +476,7 @@ class RegisterScreen extends GetWidget<RegisterController> {
                                       fontSize: getFontSize(
                                         18,
                                       ),
-                                      fontFamily: 'SF UI Text',
+                                      fontFamily: 'PNU',
                                       fontWeight: FontWeight.w600,
                                     ),
                                   ),
@@ -488,7 +488,7 @@ class RegisterScreen extends GetWidget<RegisterController> {
                                       fontSize: getFontSize(
                                         18,
                                       ),
-                                      fontFamily: 'SF UI Text',
+                                      fontFamily: 'PNU',
                                       fontWeight: FontWeight.w600,
                                     ),
                                   ),

@@ -14,36 +14,9 @@ class SliderrectangleseventysevenItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: getVerticalSize(
-        270,
-      ),
-      width: getHorizontalSize(
-        264,
-      ),
-      child: Stack(
-        alignment: Alignment.topCenter,
-        children: [
-          CustomImageView(
-            svgPath: ImageConstant.imgRectangle77,
-            height: getSize(
-              264,
-            ),
-            width: getSize(
-              264,
-            ),
-            alignment: Alignment.center,
-          ),
-          CustomImageView(
-            imagePath: ImageConstant.imageNotFound,
-            height: getVerticalSize(
-              259,
-            ),
-            width: getHorizontalSize(
-              252,
-            ),
-            alignment: Alignment.topCenter,
-          ),
-        ],
+      child: Image.network(
+        "https://i.cbc.ca/1.6801410.1680639762!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/dr-jose-francois.jpg",
+        alignment: Alignment.center,
       ),
     );
   }

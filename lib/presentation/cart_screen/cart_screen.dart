@@ -77,9 +77,9 @@ class CartScreen extends StatelessWidget {
                                       textInputAction: TextInputAction.done,
                                       suffix: CustomButton(
                                           onTap: () {
-                                            Get.toNamed(AppRoutes.couponScreen);
+                                            //  Get.toNamed(AppRoutes.couponScreen);
                                           },
-                                          margin: getMargin(right: 8, top: 1, bottom: 1),
+                                          margin: getMargin(right: 8, top: 1, bottom: 1, left: 8),
                                           height: getVerticalSize(36),
                                           width: getHorizontalSize(141),
                                           text: "طبق كود الخصم".tr,

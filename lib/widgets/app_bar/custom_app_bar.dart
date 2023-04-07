@@ -3,14 +3,7 @@ import 'package:shoes_app/core/app_export.dart';
 
 // ignore: must_be_immutable
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
-  CustomAppBar(
-      {required this.height,
-      this.styleType,
-      this.leadingWidth,
-      this.leading,
-      this.title,
-      this.centerTitle,
-      this.actions});
+  CustomAppBar({required this.height, this.styleType, this.leadingWidth, this.leading, this.title, this.centerTitle, this.actions});
 
   double height;
 
@@ -29,7 +22,6 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      elevation: 0,
       toolbarHeight: height,
       automaticallyImplyLeading: false,
       backgroundColor: Colors.white,

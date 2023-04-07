@@ -44,6 +44,7 @@ class CustomBottomBar extends StatelessWidget {
           showSelectedLabels: false,
           showUnselectedLabels: false,
           elevation: 0,
+          selectedFontSize: 0,
           currentIndex: controller.selectedIndex.value,
           type: BottomNavigationBarType.fixed,
           items: List.generate(bottomMenuList.length, (index) {

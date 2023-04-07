@@ -6,7 +6,6 @@ import 'package:shoes_app/widgets/custom_button.dart';
 import 'package:shoes_app/widgets/custom_text_form_field.dart';
 
 class RegisterErrorScreen extends GetWidget<RegisterErrorController> {
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -80,8 +79,7 @@ class RegisterErrorScreen extends GetWidget<RegisterErrorController> {
                               ),
                               CustomTextFormField(
                                 focusNode: FocusNode(),
-                                controller:
-                                    controller.groupFourteenController,
+                                controller: controller.groupFourteenController,
                                 hintText: "msg_enter_first_name".tr,
                                 margin: getMargin(
                                   top: 8,
@@ -223,9 +221,7 @@ class RegisterErrorScreen extends GetWidget<RegisterErrorController> {
                                   ),
                                 ),
                                 validator: (value) {
-                                  if (value == null ||
-                                      (!isValidEmail(value,
-                                          isRequired: true))) {
+                                  if (value == null || (!isValidEmail(value, isRequired: true))) {
                                     return "Please enter valid email";
                                   }
                                   return null;
@@ -262,19 +258,16 @@ class RegisterErrorScreen extends GetWidget<RegisterErrorController> {
                               Obx(
                                 () => CustomTextFormField(
                                   focusNode: FocusNode(),
-                                  controller:
-                                      controller.groupSeventeenController,
+                                  controller: controller.groupSeventeenController,
                                   hintText: "lbl_enter_password".tr,
                                   margin: getMargin(
                                     top: 8,
                                   ),
                                   padding: TextFormFieldPadding.PaddingT13_1,
-                                  textInputType:
-                                      TextInputType.visiblePassword,
+                                  textInputType: TextInputType.visiblePassword,
                                   suffix: GestureDetector(
                                     onTap: () {
-                                      controller.isShowPassword.value =
-                                          !controller.isShowPassword.value;
+                                      controller.isShowPassword.value = !controller.isShowPassword.value;
                                     },
                                     child: Container(
                                       margin: getMargin(
@@ -284,10 +277,7 @@ class RegisterErrorScreen extends GetWidget<RegisterErrorController> {
                                         bottom: 12,
                                       ),
                                       child: CustomImageView(
-                                        svgPath:
-                                            controller.isShowPassword.value
-                                                ? ImageConstant.imgWarning
-                                                : ImageConstant.imgWarning,
+                                        svgPath: controller.isShowPassword.value ? ImageConstant.imgWarning : ImageConstant.imgWarning,
                                       ),
                                     ),
                                   ),
@@ -297,15 +287,12 @@ class RegisterErrorScreen extends GetWidget<RegisterErrorController> {
                                     ),
                                   ),
                                   validator: (value) {
-                                    if (value == null ||
-                                        (!isValidPassword(value,
-                                            isRequired: true))) {
+                                    if (value == null || (!isValidPassword(value, isRequired: true))) {
                                       return "Please enter valid password";
                                     }
                                     return null;
                                   },
-                                  isObscureText:
-                                      !controller.isShowPassword.value,
+                                  isObscureText: !controller.isShowPassword.value,
                                 ),
                               ),
                               Padding(
@@ -339,20 +326,17 @@ class RegisterErrorScreen extends GetWidget<RegisterErrorController> {
                               Obx(
                                 () => CustomTextFormField(
                                   focusNode: FocusNode(),
-                                  controller:
-                                      controller.groupEighteenController,
+                                  controller: controller.groupEighteenController,
                                   hintText: "msg_enter_confirm_password".tr,
                                   margin: getMargin(
                                     top: 8,
                                   ),
                                   padding: TextFormFieldPadding.PaddingT13_1,
                                   textInputAction: TextInputAction.done,
-                                  textInputType:
-                                      TextInputType.visiblePassword,
+                                  textInputType: TextInputType.visiblePassword,
                                   suffix: GestureDetector(
                                     onTap: () {
-                                      controller.isShowPassword1.value =
-                                          !controller.isShowPassword1.value;
+                                      controller.isShowPassword1.value = !controller.isShowPassword1.value;
                                     },
                                     child: Container(
                                       margin: getMargin(
@@ -362,10 +346,7 @@ class RegisterErrorScreen extends GetWidget<RegisterErrorController> {
                                         bottom: 12,
                                       ),
                                       child: CustomImageView(
-                                        svgPath:
-                                            controller.isShowPassword1.value
-                                                ? ImageConstant.imgWarning
-                                                : ImageConstant.imgWarning,
+                                        svgPath: controller.isShowPassword1.value ? ImageConstant.imgWarning : ImageConstant.imgWarning,
                                       ),
                                     ),
                                   ),
@@ -375,15 +356,12 @@ class RegisterErrorScreen extends GetWidget<RegisterErrorController> {
                                     ),
                                   ),
                                   validator: (value) {
-                                    if (value == null ||
-                                        (!isValidPassword(value,
-                                            isRequired: true))) {
+                                    if (value == null || (!isValidPassword(value, isRequired: true))) {
                                       return "Please enter valid password";
                                     }
                                     return null;
                                   },
-                                  isObscureText:
-                                      !controller.isShowPassword1.value,
+                                  isObscureText: !controller.isShowPassword1.value,
                                 ),
                               ),
                               Padding(
@@ -452,7 +430,7 @@ class RegisterErrorScreen extends GetWidget<RegisterErrorController> {
                                               fontSize: getFontSize(
                                                 15,
                                               ),
-                                              fontFamily: 'SF UI Text',
+                                              fontFamily: 'PNU',
                                               fontWeight: FontWeight.w400,
                                             ),
                                           ),
@@ -463,7 +441,7 @@ class RegisterErrorScreen extends GetWidget<RegisterErrorController> {
                                               fontSize: getFontSize(
                                                 15,
                                               ),
-                                              fontFamily: 'SF UI Text',
+                                              fontFamily: 'PNU',
                                               fontWeight: FontWeight.w400,
                                             ),
                                           ),
@@ -474,7 +452,7 @@ class RegisterErrorScreen extends GetWidget<RegisterErrorController> {
                                               fontSize: getFontSize(
                                                 15,
                                               ),
-                                              fontFamily: 'SF UI Text',
+                                              fontFamily: 'PNU',
                                               fontWeight: FontWeight.w400,
                                             ),
                                           ),
@@ -511,7 +489,7 @@ class RegisterErrorScreen extends GetWidget<RegisterErrorController> {
                                     fontSize: getFontSize(
                                       17,
                                     ),
-                                    fontFamily: 'SF UI Text',
+                                    fontFamily: 'PNU',
                                     fontWeight: FontWeight.w400,
                                   ),
                                 ),
@@ -522,7 +500,7 @@ class RegisterErrorScreen extends GetWidget<RegisterErrorController> {
                                     fontSize: getFontSize(
                                       18,
                                     ),
-                                    fontFamily: 'SF UI Text',
+                                    fontFamily: 'PNU',
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
@@ -533,7 +511,7 @@ class RegisterErrorScreen extends GetWidget<RegisterErrorController> {
                                     fontSize: getFontSize(
                                       18,
                                     ),
-                                    fontFamily: 'SF UI Text',
+                                    fontFamily: 'PNU',
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),

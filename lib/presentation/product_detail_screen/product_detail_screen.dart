@@ -147,21 +147,21 @@ class ProductDetailScreen extends GetWidget<ProductDetailController> {
                                               style: TextStyle(
                                                   color: ColorConstant.black900,
                                                   fontSize: getFontSize(17),
-                                                  fontFamily: 'SF UI Text',
+                                                  fontFamily: 'PNU',
                                                   fontWeight: FontWeight.w400)),
                                           TextSpan(
                                               text: "".tr,
                                               style: TextStyle(
                                                   color: ColorConstant.black900,
                                                   fontSize: getFontSize(17),
-                                                  fontFamily: 'SF UI Text',
+                                                  fontFamily: 'PNU',
                                                   fontWeight: FontWeight.w400)),
                                           TextSpan(
                                               text: "".tr,
                                               style: TextStyle(
                                                   color: ColorConstant.black900,
                                                   fontSize: getFontSize(17),
-                                                  fontFamily: 'SF UI Text',
+                                                  fontFamily: 'PNU',
                                                   fontWeight: FontWeight.w400))
                                         ]),
                                         textAlign: TextAlign.left)),

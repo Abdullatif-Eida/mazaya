@@ -1,5 +1,6 @@
 import 'package:shoes_app/presentation/doctor_detail_screen/controller/doctor_detail_controller.dart';
 import 'package:shoes_app/presentation/doctor_detail_screen/doctor_detail_screen.dart';
+import 'package:shoes_app/presentation/doctor_screen/doctor_screen.dart';
 import 'package:shoes_app/presentation/notification_page/notification_page.dart';
 import 'package:shoes_app/presentation/splace_screen_one_screen/splace_screen_one_screen.dart';
 import 'package:shoes_app/presentation/splace_screen_one_screen/binding/splace_screen_one_binding.dart';
@@ -77,6 +78,8 @@ class AppRoutes {
   static const String onboardingThreeScreen = '/onboarding_three_screen';
 
   static const String loginScreen = '/login_screen';
+
+  static const String docotorScreen = '/doctor_screen';
 
   static const String registerScreen = '/register_screen';
 
@@ -321,6 +324,12 @@ class AppRoutes {
         CategoriesBinding(),
       ],
     ),
+    GetPage(
+      name: docotorScreen,
+      page: () => DoctorScreen(),
+      bindings: [],
+    ),
+    //
     GetPage(
       name: couponScreen,
       page: () => CouponScreen(),

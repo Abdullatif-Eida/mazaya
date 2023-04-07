@@ -25,6 +25,13 @@ class ListwalkingfitnessItemWidget extends StatelessWidget {
           ),
           decoration: AppDecoration.fillGray100.copyWith(
             borderRadius: BorderRadiusStyle.roundedBorder8,
+            boxShadow: const [
+              BoxShadow(
+                blurRadius: 5,
+                color: Color(0x44111417),
+                offset: Offset(0, 2),
+              )
+            ],
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -54,7 +61,7 @@ class ListwalkingfitnessItemWidget extends StatelessWidget {
               Container(
                 margin: getMargin(left: 16, top: 16, right: 16),
                 child: Text(
-                  "أخر الأخبار".tr,
+                  "عرض مزايا".tr,
                   maxLines: null,
                   textAlign: TextAlign.left,
                   style: AppStyle.txtHeadlineBlack900,

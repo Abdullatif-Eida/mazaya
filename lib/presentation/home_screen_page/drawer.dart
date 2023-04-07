@@ -74,56 +74,6 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                     Navigator.of(context).pop();
                     Navigator.of(context).push(MaterialPageRoute(builder: (context) => Cards()));
                   }),
-              Expanded(
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    const Divider(
-                      height: 12,
-                      thickness: 2,
-                      color: Color(0xFFE0E3E7),
-                    ),
-                    Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
-                      child: GestureDetector(
-                        onTap: () {},
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            ClipRRect(
-                                borderRadius: BorderRadius.circular(50),
-                                child: const Icon(
-                                  Icons.login,
-                                  size: 44,
-                                  color: Colors.black,
-                                )),
-                            Expanded(
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "تسجيل الدخول",
-                                      style: const TextStyle(
-                                        color: Color(0xFF101213),
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
             ],
           ),
         ),

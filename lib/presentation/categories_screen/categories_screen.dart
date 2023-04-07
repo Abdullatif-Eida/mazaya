@@ -31,13 +31,6 @@ class CategoriesScreen extends GetWidget<CategoriesController> {
                       }),
                 ),
                 title: AppbarTitle(text: "التصنيفات".tr, margin: getMargin(left: 16)),
-                actions: [
-                  AppbarImage(
-                      height: getSize(24),
-                      width: getSize(24),
-                      svgPath: ImageConstant.imgContrast,
-                      margin: getMargin(left: 20, top: 17, right: 20, bottom: 17))
-                ],
                 styleType: Style.bgFillWhiteA700),
             body: SizedBox(
                 width: size.width,
@@ -106,9 +99,9 @@ class CategoriesScreen extends GetWidget<CategoriesController> {
                                     margin: getMargin(top: 10),
                                     decoration: AppDecoration.white,
                                     child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-                                      CustomImageView(
-                                        imagePath: ImageConstant.baner,
-                                        height: getVerticalSize(200),
+                                      Image.network(
+                                        "https://www.netmeds.com/images/cms/offers/1620317214_Mobile-Pushxhdfhfdh.jpg",
+                                        height: getVerticalSize(250),
                                         width: getHorizontalSize(428),
                                         fit: BoxFit.fill,
                                       )
@@ -121,38 +114,43 @@ class CategoriesScreen extends GetWidget<CategoriesController> {
                                   shrinkWrap: true,
                                   itemBuilder: (context, index) {
                                     CategoriesItemModel model = controller.categoriesModelObj.value.categoryItemList[index];
-                                    return Container(
-                                      width: double.maxFinite,
-                                      padding: getPadding(left: 20, top: 10, right: 20, bottom: 10),
-                                      decoration: AppDecoration.white,
-                                      child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                                        Card(
-                                            clipBehavior: Clip.antiAlias,
-                                            elevation: 0,
-                                            margin: EdgeInsets.all(0),
-                                            color: ColorConstant.gray100,
-                                            shape: RoundedRectangleBorder(borderRadius: BorderRadiusStyle.roundedBorder8),
-                                            child: Container(
-                                                height: getSize(60),
-                                                width: getSize(60),
-                                                padding: getPadding(left: 4, top: 0, right: 4, bottom: 10),
-                                                decoration: AppDecoration.fillGray100.copyWith(borderRadius: BorderRadiusStyle.roundedBorder8),
-                                                child: CustomImageView(
-                                                    imagePath: ImageConstant.imagePath + model.image,
-                                                    height: getVerticalSize(60),
-                                                    width: getHorizontalSize(52),
-                                                    alignment: Alignment.center))),
-                                        Padding(
-                                            padding: getPadding(left: 16, top: 20, bottom: 18),
-                                            child: Text(model.name,
-                                                overflow: TextOverflow.ellipsis, textAlign: TextAlign.left, style: AppStyle.txtHeadline)),
-                                        Spacer(),
-                                        CustomImageView(
-                                            svgPath: ImageConstant.imgArrowright,
-                                            height: getSize(24),
-                                            width: getSize(24),
-                                            margin: getMargin(top: 18, bottom: 18))
-                                      ]),
+                                    return GestureDetector(
+                                      onTap: () {
+                                        Get.toNamed(AppRoutes.docotorScreen);
+                                      },
+                                      child: Container(
+                                        width: double.maxFinite,
+                                        padding: getPadding(left: 20, top: 10, right: 20, bottom: 10),
+                                        decoration: AppDecoration.white,
+                                        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                                          Card(
+                                              clipBehavior: Clip.antiAlias,
+                                              elevation: 0,
+                                              margin: EdgeInsets.all(0),
+                                              color: ColorConstant.gray100,
+                                              shape: RoundedRectangleBorder(borderRadius: BorderRadiusStyle.roundedBorder8),
+                                              child: Container(
+                                                  height: getSize(60),
+                                                  width: getSize(60),
+                                                  padding: getPadding(left: 4, top: 0, right: 4, bottom: 10),
+                                                  decoration: AppDecoration.fillGray100.copyWith(borderRadius: BorderRadiusStyle.roundedBorder8),
+                                                  child: CustomImageView(
+                                                      imagePath: ImageConstant.imagePath + model.image,
+                                                      height: getVerticalSize(60),
+                                                      width: getHorizontalSize(52),
+                                                      alignment: Alignment.center))),
+                                          Padding(
+                                              padding: getPadding(left: 16, top: 20, bottom: 18),
+                                              child: Text(model.name,
+                                                  overflow: TextOverflow.ellipsis, textAlign: TextAlign.left, style: AppStyle.txtHeadline)),
+                                          Spacer(),
+                                          CustomImageView(
+                                              svgPath: ImageConstant.imgArrowleft,
+                                              height: getSize(24),
+                                              width: getSize(24),
+                                              margin: getMargin(top: 18, bottom: 18))
+                                        ]),
+                                      ),
                                     );
                                   },
                                   separatorBuilder: (context, index) {

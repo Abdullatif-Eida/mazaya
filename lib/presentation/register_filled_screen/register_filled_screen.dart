@@ -6,7 +6,6 @@ import 'package:shoes_app/widgets/custom_button.dart';
 import 'package:shoes_app/widgets/custom_text_form_field.dart';
 
 class RegisterFilledScreen extends GetWidget<RegisterFilledController> {
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -80,8 +79,7 @@ class RegisterFilledScreen extends GetWidget<RegisterFilledController> {
                               ),
                               CustomTextFormField(
                                 focusNode: FocusNode(),
-                                controller:
-                                    controller.groupTwentySevenController,
+                                controller: controller.groupTwentySevenController,
                                 hintText: "lbl_john2".tr,
                                 margin: getMargin(
                                   top: 8,
@@ -106,8 +104,7 @@ class RegisterFilledScreen extends GetWidget<RegisterFilledController> {
                               ),
                               CustomTextFormField(
                                 focusNode: FocusNode(),
-                                controller:
-                                    controller.groupTwentyEightController,
+                                controller: controller.groupTwentyEightController,
                                 hintText: "lbl_abram".tr,
                                 margin: getMargin(
                                   top: 8,
@@ -139,9 +136,7 @@ class RegisterFilledScreen extends GetWidget<RegisterFilledController> {
                                 ),
                                 textInputType: TextInputType.emailAddress,
                                 validator: (value) {
-                                  if (value == null ||
-                                      (!isValidEmail(value,
-                                          isRequired: true))) {
+                                  if (value == null || (!isValidEmail(value, isRequired: true))) {
                                     return "Please enter valid email";
                                   }
                                   return null;
@@ -173,12 +168,10 @@ class RegisterFilledScreen extends GetWidget<RegisterFilledController> {
                                     top: 8,
                                   ),
                                   padding: TextFormFieldPadding.PaddingT10,
-                                  textInputType:
-                                      TextInputType.visiblePassword,
+                                  textInputType: TextInputType.visiblePassword,
                                   suffix: GestureDetector(
                                     onTap: () {
-                                      controller.isShowPassword.value =
-                                          !controller.isShowPassword.value;
+                                      controller.isShowPassword.value = !controller.isShowPassword.value;
                                     },
                                     child: Container(
                                       margin: getMargin(
@@ -188,10 +181,7 @@ class RegisterFilledScreen extends GetWidget<RegisterFilledController> {
                                         bottom: 12,
                                       ),
                                       child: CustomImageView(
-                                        svgPath:
-                                            controller.isShowPassword.value
-                                                ? ImageConstant.imgEye
-                                                : ImageConstant.imgEye,
+                                        svgPath: controller.isShowPassword.value ? ImageConstant.imgEye : ImageConstant.imgEye,
                                       ),
                                     ),
                                   ),
@@ -201,15 +191,12 @@ class RegisterFilledScreen extends GetWidget<RegisterFilledController> {
                                     ),
                                   ),
                                   validator: (value) {
-                                    if (value == null ||
-                                        (!isValidPassword(value,
-                                            isRequired: true))) {
+                                    if (value == null || (!isValidPassword(value, isRequired: true))) {
                                       return "Please enter valid password";
                                     }
                                     return null;
                                   },
-                                  isObscureText:
-                                      !controller.isShowPassword.value,
+                                  isObscureText: !controller.isShowPassword.value,
                                 ),
                               ),
                             ],
@@ -232,20 +219,17 @@ class RegisterFilledScreen extends GetWidget<RegisterFilledController> {
                               Obx(
                                 () => CustomTextFormField(
                                   focusNode: FocusNode(),
-                                  controller:
-                                      controller.passwordOneController,
+                                  controller: controller.passwordOneController,
                                   hintText: "lbl".tr,
                                   margin: getMargin(
                                     top: 8,
                                   ),
                                   padding: TextFormFieldPadding.PaddingT10,
                                   textInputAction: TextInputAction.done,
-                                  textInputType:
-                                      TextInputType.visiblePassword,
+                                  textInputType: TextInputType.visiblePassword,
                                   suffix: GestureDetector(
                                     onTap: () {
-                                      controller.isShowPassword1.value =
-                                          !controller.isShowPassword1.value;
+                                      controller.isShowPassword1.value = !controller.isShowPassword1.value;
                                     },
                                     child: Container(
                                       margin: getMargin(
@@ -255,10 +239,7 @@ class RegisterFilledScreen extends GetWidget<RegisterFilledController> {
                                         bottom: 12,
                                       ),
                                       child: CustomImageView(
-                                        svgPath:
-                                            controller.isShowPassword1.value
-                                                ? ImageConstant.imgEye
-                                                : ImageConstant.imgEye,
+                                        svgPath: controller.isShowPassword1.value ? ImageConstant.imgEye : ImageConstant.imgEye,
                                       ),
                                     ),
                                   ),
@@ -268,15 +249,12 @@ class RegisterFilledScreen extends GetWidget<RegisterFilledController> {
                                     ),
                                   ),
                                   validator: (value) {
-                                    if (value == null ||
-                                        (!isValidPassword(value,
-                                            isRequired: true))) {
+                                    if (value == null || (!isValidPassword(value, isRequired: true))) {
                                       return "Please enter valid password";
                                     }
                                     return null;
                                   },
-                                  isObscureText:
-                                      !controller.isShowPassword1.value,
+                                  isObscureText: !controller.isShowPassword1.value,
                                 ),
                               ),
                             ],
@@ -334,7 +312,7 @@ class RegisterFilledScreen extends GetWidget<RegisterFilledController> {
                                               fontSize: getFontSize(
                                                 15,
                                               ),
-                                              fontFamily: 'SF UI Text',
+                                              fontFamily: 'PNU',
                                               fontWeight: FontWeight.w400,
                                             ),
                                           ),
@@ -345,7 +323,7 @@ class RegisterFilledScreen extends GetWidget<RegisterFilledController> {
                                               fontSize: getFontSize(
                                                 15,
                                               ),
-                                              fontFamily: 'SF UI Text',
+                                              fontFamily: 'PNU',
                                               fontWeight: FontWeight.w400,
                                             ),
                                           ),
@@ -356,7 +334,7 @@ class RegisterFilledScreen extends GetWidget<RegisterFilledController> {
                                               fontSize: getFontSize(
                                                 15,
                                               ),
-                                              fontFamily: 'SF UI Text',
+                                              fontFamily: 'PNU',
                                               fontWeight: FontWeight.w400,
                                             ),
                                           ),
@@ -393,7 +371,7 @@ class RegisterFilledScreen extends GetWidget<RegisterFilledController> {
                                     fontSize: getFontSize(
                                       17,
                                     ),
-                                    fontFamily: 'SF UI Text',
+                                    fontFamily: 'PNU',
                                     fontWeight: FontWeight.w400,
                                   ),
                                 ),
@@ -404,7 +382,7 @@ class RegisterFilledScreen extends GetWidget<RegisterFilledController> {
                                     fontSize: getFontSize(
                                       18,
                                     ),
-                                    fontFamily: 'SF UI Text',
+                                    fontFamily: 'PNU',
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
@@ -415,7 +393,7 @@ class RegisterFilledScreen extends GetWidget<RegisterFilledController> {
                                     fontSize: getFontSize(
                                       18,
                                     ),
-                                    fontFamily: 'SF UI Text',
+                                    fontFamily: 'PNU',
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),

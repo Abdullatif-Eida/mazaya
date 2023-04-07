@@ -4,15 +4,7 @@ import 'package:shoes_app/core/app_export.dart';
 // ignore: must_be_immutable
 class CustomCheckbox extends StatelessWidget {
   CustomCheckbox(
-      {this.fontStyle,
-      this.alignment,
-      this.isRightCheck = false,
-      this.iconSize,
-      this.value,
-      this.onChange,
-      this.text,
-      this.width,
-      this.margin});
+      {this.fontStyle, this.alignment, this.isRightCheck = false, this.iconSize, this.value, this.onChange, this.text, this.width, this.margin});
 
   CheckboxFontStyle? fontStyle;
 
@@ -103,7 +95,7 @@ class CustomCheckbox extends StatelessWidget {
           onChange!(value!);
         },
         activeColor: ColorConstant.black900,
-        side: BorderSide(color: ColorConstant.greyColor,width: getHorizontalSize(1),style: BorderStyle.solid),
+        side: BorderSide(color: ColorConstant.greyColor, width: getHorizontalSize(1), style: BorderStyle.solid),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(getHorizontalSize(4)),
         ),
@@ -119,7 +111,7 @@ class CustomCheckbox extends StatelessWidget {
           fontSize: getFontSize(
             15,
           ),
-          fontFamily: 'SF UI Text',
+          fontFamily: 'PNU',
           fontWeight: FontWeight.w400,
           height: getVerticalSize(
             1.20,
