@@ -1,5 +1,4 @@
 import 'package:shoes_app/presentation/home_screen_container_screen/controller/home_screen_container_controller.dart';
-import 'package:shoes_app/presentation/home_screen_page/drawer.dart';
 import 'package:shoes_app/widgets/custom_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -30,7 +29,6 @@ class HomeScreenPage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         key: _key,
-        drawer: DrawerWidget(),
         resizeToAvoidBottomInset: false,
         backgroundColor: ColorConstant.whiteA700,
         appBar: CustomAppBar(
@@ -40,9 +38,11 @@ class HomeScreenPage extends StatelessWidget {
           leadingWidth: 54,
           leading: GestureDetector(
             onTap: () => _key.currentState!.openDrawer(),
-            child: Icon(
-              Icons.menu,
-              color: Colors.black,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 8.0, right: 8, top: 12),
+              child: Image.asset(
+                'assets/images/logo.png',
+              ),
             ),
           ),
           title: Text(
@@ -54,20 +54,32 @@ class HomeScreenPage extends StatelessWidget {
               onTap: () {
                 homeScreenContainerController.change(4);
               },
-              child: CustomImageView(
-                imagePath: ImageConstant.imgEllipse8,
-                height: getSize(
-                  32,
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: 20,
+                  right: 20,
                 ),
-                width: getSize(
-                  32,
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 15,
+                    ),
+                    CustomImageView(
+                      imagePath: ImageConstant.imgEllipse8,
+                      height: getSize(
+                        32,
+                      ),
+                      width: getSize(
+                        32,
+                      ),
+                      radius: BorderRadius.circular(
+                        getHorizontalSize(
+                          16,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-                radius: BorderRadius.circular(
-                  getHorizontalSize(
-                    16,
-                  ),
-                ),
-                margin: getMargin(left: 20, top: 16, right: 20, bottom: 24),
               ),
             ),
           ],
@@ -154,6 +166,7 @@ class HomeScreenPage extends StatelessWidget {
                       ],
                     ),
                   ),
+                  SizedBox(height: 13),
                   Container(
                     height: getVerticalSize(
                       150,

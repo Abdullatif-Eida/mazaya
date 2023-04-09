@@ -1,6 +1,10 @@
 import 'dart:io';
 
 import 'package:flutter/services.dart';
+import 'package:shoes_app/presentation/mazaya/cards.dart';
+import 'package:shoes_app/presentation/mazaya/offer.dart';
+import 'package:shoes_app/presentation/mazaya/points.dart';
+import 'package:shoes_app/presentation/mazaya/service_providers/service_providers.dart';
 
 import '../home_screen_container_screen/controller/home_screen_container_controller.dart';
 import 'controller/my_profile_controller.dart';
@@ -52,20 +56,16 @@ class MyProfilePage extends StatelessWidget {
                         ),
                         Padding(
                             padding: getPadding(top: 8),
-                            child: Text("الأسم: أحمد أحمد جاسم".tr,
-                                overflow: TextOverflow.ellipsis, textAlign: TextAlign.left, style: AppStyle.txtBodyBlack900)),
+                            child: Text("أحمد أحمد جاسم".tr,
+                                overflow: TextOverflow.ellipsis, textAlign: TextAlign.right, style: AppStyle.txtBodyBlack900)),
                         Padding(
                             padding: getPadding(top: 6),
-                            child: Text("البريد الإلكتروني: ahmedahmed@gmail.com".tr,
-                                overflow: TextOverflow.ellipsis, textAlign: TextAlign.left, style: AppStyle.txtSFUITextRegular15Gray600)),
+                            child: Text("ahmedahmed@gmail.com".tr,
+                                overflow: TextOverflow.ellipsis, textAlign: TextAlign.right, style: AppStyle.txtSFUITextRegular15Gray600)),
                         Padding(
                             padding: getPadding(top: 6),
-                            child: Text("الدولة: السعودية".tr,
-                                overflow: TextOverflow.ellipsis, textAlign: TextAlign.left, style: AppStyle.txtSFUITextRegular15Gray600)),
-                        Padding(
-                            padding: getPadding(top: 6),
-                            child: Text("العضوية: عضو مبدع".tr,
-                                overflow: TextOverflow.ellipsis, textAlign: TextAlign.left, style: AppStyle.txtSFUITextRegular15Gray600)),
+                            child: Text("عدد النقاط المتوفرة: 15".tr,
+                                overflow: TextOverflow.ellipsis, textAlign: TextAlign.right, style: AppStyle.txtSFUITextRegular15Gray600)),
                       ]))),
               Container(
                   width: double.maxFinite,
@@ -130,7 +130,83 @@ class MyProfilePage extends StatelessWidget {
                       CustomImageView(svgPath: ImageConstant.imgArrowleft, height: getSize(24), width: getSize(24))
                     ])),
               ),
-              for (var item in ["مزودي خدمة مزايا ", "أحدث العروض ", "بطاقات المزيا ", "أسئلة شائعة ", "انضم الى شبكتنا ", "تواصل معنا "])
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => ServiceProvider()));
+                },
+                child: Container(
+                    width: double.maxFinite,
+                    margin: getMargin(top: 1),
+                    padding: getPadding(left: 20, top: 16, right: 20, bottom: 16),
+                    decoration: AppDecoration.white,
+                    child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                      Icon(Icons.list),
+                      Padding(
+                          padding: getPadding(left: 15, top: 3, bottom: 2),
+                          child: Text(" مزودي خدمة مزايا",
+                              overflow: TextOverflow.ellipsis, textAlign: TextAlign.left, style: AppStyle.txtSFUITextRegular15Black900)),
+                      Spacer(),
+                      CustomImageView(svgPath: ImageConstant.imgArrowleft, height: getSize(24), width: getSize(24))
+                    ])),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Offer()));
+                },
+                child: Container(
+                    width: double.maxFinite,
+                    margin: getMargin(top: 1),
+                    padding: getPadding(left: 20, top: 16, right: 20, bottom: 16),
+                    decoration: AppDecoration.white,
+                    child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                      Icon(Icons.list),
+                      Padding(
+                          padding: getPadding(left: 15, top: 3, bottom: 2),
+                          child: Text(" أحدث العروض",
+                              overflow: TextOverflow.ellipsis, textAlign: TextAlign.left, style: AppStyle.txtSFUITextRegular15Black900)),
+                      Spacer(),
+                      CustomImageView(svgPath: ImageConstant.imgArrowleft, height: getSize(24), width: getSize(24))
+                    ])),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Points()));
+                },
+                child: Container(
+                    width: double.maxFinite,
+                    margin: getMargin(top: 1),
+                    padding: getPadding(left: 20, top: 16, right: 20, bottom: 16),
+                    decoration: AppDecoration.white,
+                    child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                      Icon(Icons.list),
+                      Padding(
+                          padding: getPadding(left: 15, top: 3, bottom: 2),
+                          child: Text(" النقاط",
+                              overflow: TextOverflow.ellipsis, textAlign: TextAlign.left, style: AppStyle.txtSFUITextRegular15Black900)),
+                      Spacer(),
+                      CustomImageView(svgPath: ImageConstant.imgArrowleft, height: getSize(24), width: getSize(24))
+                    ])),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Cards()));
+                },
+                child: Container(
+                    width: double.maxFinite,
+                    margin: getMargin(top: 1),
+                    padding: getPadding(left: 20, top: 16, right: 20, bottom: 16),
+                    decoration: AppDecoration.white,
+                    child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                      Icon(Icons.list),
+                      Padding(
+                          padding: getPadding(left: 15, top: 3, bottom: 2),
+                          child: Text("بطاقات مزايا ",
+                              overflow: TextOverflow.ellipsis, textAlign: TextAlign.left, style: AppStyle.txtSFUITextRegular15Black900)),
+                      Spacer(),
+                      CustomImageView(svgPath: ImageConstant.imgArrowleft, height: getSize(24), width: getSize(24))
+                    ])),
+              ),
+              for (var item in ["أسئلة شائعة ", "انضم الى شبكتنا ", "تواصل معنا "])
                 GestureDetector(
                   onTap: () {},
                   child: Container(
@@ -176,7 +252,7 @@ class MyProfilePage extends StatelessWidget {
                   child: Text("التطبيق".tr, overflow: TextOverflow.ellipsis, textAlign: TextAlign.right, style: AppStyle.txtHeadline)),
               GestureDetector(
                 onTap: () {
-                  Get.toNamed(AppRoutes.privacyPolicyScreen);
+                  Get.toNamed(AppRoutes.appNavigationScreen);
                 },
                 child: Container(
                     width: double.maxFinite,

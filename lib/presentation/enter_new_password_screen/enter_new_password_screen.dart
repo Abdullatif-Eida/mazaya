@@ -57,7 +57,6 @@ class EnterNewPasswordScreen extends GetWidget<EnterNewPasswordController> {
                                 controller: controller.groupThirtyTwoController,
                                 hintText: "أدخل كلمة السر".tr,
                                 margin: getMargin(top: 8),
-                                padding: TextFormFieldPadding.PaddingT13_1,
                                 textInputType: TextInputType.visiblePassword,
                                 suffix: GestureDetector(
                                     onTap: () {
@@ -85,7 +84,6 @@ class EnterNewPasswordScreen extends GetWidget<EnterNewPasswordController> {
                                 controller: controller.groupThirtyThreeController,
                                 hintText: "الرجاء إدخال كلمة السر".tr,
                                 margin: getMargin(top: 8),
-                                padding: TextFormFieldPadding.PaddingT13_1,
                                 textInputAction: TextInputAction.done,
                                 textInputType: TextInputType.visiblePassword,
                                 suffix: GestureDetector(

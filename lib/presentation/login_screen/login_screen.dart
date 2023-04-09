@@ -85,7 +85,6 @@ class LoginScreen extends GetWidget<LoginController> {
                           style: AppStyle.txtBodyBlack900,
                         ),
                         CustomTextFormField(
-                          focusNode: FocusNode(),
                           controller: controller.group110Controller,
                           hintText: "أدخل بريدك الإلكتروني".tr,
                           margin: getMargin(
@@ -98,7 +97,6 @@ class LoginScreen extends GetWidget<LoginController> {
                             }
                             return null;
                           },
-                          padding: TextFormFieldPadding.PaddingT13_1,
                           suffix: Container(
                             margin: getMargin(
                               left: 12,
@@ -140,7 +138,6 @@ class LoginScreen extends GetWidget<LoginController> {
                           margin: getMargin(
                             top: 8,
                           ),
-                          padding: TextFormFieldPadding.PaddingT13_1,
                           textInputAction: TextInputAction.done,
                           textInputType: TextInputType.emailAddress,
                           suffix: Container(

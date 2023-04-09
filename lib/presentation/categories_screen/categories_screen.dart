@@ -140,7 +140,7 @@ class CategoriesScreen extends GetWidget<CategoriesController> {
                                                       width: getHorizontalSize(52),
                                                       alignment: Alignment.center))),
                                           Padding(
-                                              padding: getPadding(left: 16, top: 20, bottom: 18),
+                                              padding: getPadding(right: 16, top: 20, bottom: 18),
                                               child: Text(model.name,
                                                   overflow: TextOverflow.ellipsis, textAlign: TextAlign.left, style: AppStyle.txtHeadline)),
                                           Spacer(),

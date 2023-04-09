@@ -84,7 +84,6 @@ class RegisterErrorScreen extends GetWidget<RegisterErrorController> {
                                 margin: getMargin(
                                   top: 8,
                                 ),
-                                padding: TextFormFieldPadding.PaddingT13_1,
                                 suffix: Container(
                                   margin: getMargin(
                                     left: 12,
@@ -143,7 +142,6 @@ class RegisterErrorScreen extends GetWidget<RegisterErrorController> {
                                 margin: getMargin(
                                   top: 8,
                                 ),
-                                padding: TextFormFieldPadding.PaddingT13_1,
                                 suffix: Container(
                                   margin: getMargin(
                                     left: 12,
@@ -202,7 +200,6 @@ class RegisterErrorScreen extends GetWidget<RegisterErrorController> {
                                 margin: getMargin(
                                   top: 8,
                                 ),
-                                padding: TextFormFieldPadding.PaddingT13_1,
                                 textInputType: TextInputType.emailAddress,
                                 suffix: Container(
                                   margin: getMargin(
@@ -222,7 +219,7 @@ class RegisterErrorScreen extends GetWidget<RegisterErrorController> {
                                 ),
                                 validator: (value) {
                                   if (value == null || (!isValidEmail(value, isRequired: true))) {
-                                    return "Please enter valid email";
+                                    return "الرجاء إدخال بريد إلكتروني صحيح";
                                   }
                                   return null;
                                 },
@@ -263,7 +260,6 @@ class RegisterErrorScreen extends GetWidget<RegisterErrorController> {
                                   margin: getMargin(
                                     top: 8,
                                   ),
-                                  padding: TextFormFieldPadding.PaddingT13_1,
                                   textInputType: TextInputType.visiblePassword,
                                   suffix: GestureDetector(
                                     onTap: () {
@@ -331,7 +327,6 @@ class RegisterErrorScreen extends GetWidget<RegisterErrorController> {
                                   margin: getMargin(
                                     top: 8,
                                   ),
-                                  padding: TextFormFieldPadding.PaddingT13_1,
                                   textInputAction: TextInputAction.done,
                                   textInputType: TextInputType.visiblePassword,
                                   suffix: GestureDetector(

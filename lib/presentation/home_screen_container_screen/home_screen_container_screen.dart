@@ -2,7 +2,6 @@ import 'package:flutter/services.dart';
 import 'package:shoes_app/presentation/cart_screen/cart_screen.dart';
 import 'package:shoes_app/presentation/categories_screen/categories_screen.dart';
 import 'package:shoes_app/presentation/doctor_screen/doctor_screen.dart';
-import 'package:shoes_app/presentation/home_screen_page/drawer.dart';
 
 import 'controller/home_screen_container_controller.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +32,6 @@ class HomeScreenContainerScreen extends GetWidget<HomeScreenContainerController>
     return WillPopScope(
       onWillPop: _requestPop,
       child: Scaffold(
-          drawer: DrawerWidget(),
           backgroundColor: ColorConstant.whiteA700,
           body: GetBuilder<HomeScreenContainerController>(
             init: HomeScreenContainerController(),

@@ -53,6 +53,7 @@ class DoctorScreen extends GetWidget<HomeScreenController> {
         padding: getPadding(left: 20, top: 15, right: 20),
         child: GridView.builder(
           shrinkWrap: true,
+          padding: getPadding(bottom: 15),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             mainAxisExtent: getVerticalSize(
               246,

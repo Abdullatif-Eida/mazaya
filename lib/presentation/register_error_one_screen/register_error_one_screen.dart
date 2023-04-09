@@ -145,7 +145,7 @@ class RegisterErrorOneScreen extends GetWidget<RegisterErrorOneController> {
                                 textInputType: TextInputType.emailAddress,
                                 validator: (value) {
                                   if (value == null || (!isValidEmail(value, isRequired: true))) {
-                                    return "Please enter valid email";
+                                    return "الرجاء إدخال بريد إلكتروني صحيح";
                                   }
                                   return null;
                                 },
